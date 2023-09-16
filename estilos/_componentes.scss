@@ -1,0 +1,49 @@
+@use 'variables' as *;
+// mixin
+@mixin botones($oscuro) {
+  color: orange;
+
+
+
+//   boton con fondo oscuro
+  @if ($oscuro) {
+    color: black;
+  }
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  ul {
+    display: inherit;
+    align-items: center;
+    gap: 1rem;
+  }
+  li{
+    position: relative;
+    ul{
+        background: $azul-grisaseo;
+        border-radius: $round;
+        display: flex;
+        flex-wrap: wrap;
+        position: absolute;
+        display: none;
+    }
+    &:hover{
+        ul{
+            display: block;
+        }
+    }
+  }
+}
+.hero {
+  width: auto;
+}
+.btn-claro {
+  @include botones($oscuro: true);
+  width: auto;
+}
+.btn-oscuro {
+  @include botones($oscuro: false);
+  width: auto;
+}
