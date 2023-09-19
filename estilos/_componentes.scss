@@ -1,49 +1,158 @@
-@use 'variables' as *;
+@use "variables" as *;
+
 // mixin
-@mixin botones($oscuro) {
-  color: orange;
 
+// todos los botones
+@mixin botones($oscuro, $sinicono) {
+  display: inline-block;
+  border-radius: $round;
+  padding: 0.5rem 2.5rem 0.5rem 1rem;
+  @if ($sinicono) {
+    padding: 0.5rem 1.4rem;
+  }
+  background: $azul-grisaseo;
+  color: $naranja;
+  position: relative;
+  &:after {
+    content: "";
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    background: url("../public/flecha-brn-oscuro.svg") no-repeat;
+    background-size: 70%;
+    top: 15%;
+    right: -2%;
+    position: absolute;
+  }
 
-
-//   boton con fondo oscuro
+  //   boton con fondo oscuro
   @if ($oscuro) {
-    color: black;
+    color: $azul-oscuro;
+    background: $naranja;
+    &:after {
+      content: "";
+      height: 100%;
+      width: auto;
+      aspect-ratio: 1/1;
+      background: url("../public/flecha-brn-claro.svg") no-repeat;
+      background-size: 70%;
+      @if ($sinicono) {
+        background: none;
+      }
+      top: 15%;
+      right: -2%;
+      position: absolute;
+    }
   }
 }
 
+// clases
+
+// clase que centra los contenidos
+.bandeja {
+  width: min(100% - 5rem, 60rem);
+  margin-inline: auto;
+
+  @include hd {
+    width: min(100% - 5rem, 70rem);
+  }
+
+  @include hdplus {
+    width: min(100% - 5rem, 90rem);
+  }
+}
+
+// menu principal
 nav {
+  @extend .bandeja;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    color: #fff;
+  }
   ul {
     display: inherit;
     align-items: center;
     gap: 1rem;
   }
-  li{
+  li {
     position: relative;
-    ul{
-        background: $azul-grisaseo;
-        border-radius: $round;
-        display: flex;
-        flex-wrap: wrap;
-        position: absolute;
-        display: none;
+    display: flex;
+    padding: 2rem 0;
+    img {
+      padding-left: 0.3rem;
     }
-    &:hover{
-        ul{
-            display: block;
+    ul {
+      width: 899%;
+      background: $azul-oscuro;
+      border-radius: $round;
+      display: flex;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 3.4rem;
+      display: none;
+      li {
+        display: flex;
+        flex: 1;
+        h2 {
+          font-size: clamp(1rem, 1.7vw, 20vw);
         }
+        p {
+          font-size: clamp(12px, 1.3vw, 18px);
+        }
+      }
+    }
+    &:hover {
+      ul {
+        display: block;
+      }
     }
   }
 }
 .hero {
-  width: auto;
+  // clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 100%);
+  // background: $azul-grisaseo;
+  &:before {
+    content: "";
+    clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 100%);
+    background: $azul-grisaseo;
+    width: 100vw;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: solid;
+    position: absolute;
+    z-index: -1;
+  }
+  position: relative;
+  min-height: 100px;
+  max-height: 8000px;
+  // height: auto;
+  // overflow: hidden;
+  text-align: center;
+  padding-bottom: 6rem;
+  h1,
+  h2,
+  p {
+    padding: 0 25%;
+  }
+  p {
+    color: #fff;
+    margin: $margen 0;
+  }
+  span {
+    color: #fff;
+    font-weight: bold;
+  }
 }
 .btn-claro {
-  @include botones($oscuro: true);
-  width: auto;
+  @include botones($oscuro: true, $sinicono: false);
 }
 .btn-oscuro {
-  @include botones($oscuro: false);
-  width: auto;
+  @include botones($oscuro: false, $sinicono: false);
+}
+.btn-sinicono {
+  @include botones($oscuro: true, $sinicono: true);
 }
