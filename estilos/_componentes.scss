@@ -46,6 +46,62 @@
   }
 }
 
+@mixin heroe($fondosvg, $colora, $colorb) {
+  &:before {
+    content: "";
+    clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+    @include cel{
+      clip-path: polygon(0 0%, 100% 0, 100% 93%, 0% 100%);
+    }
+    @include hd{
+      clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+    }
+    @include hdplus{
+      clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
+    }
+    // #{$fondosvg}
+    background: $azul-grisaseo;
+    background: url( #{$fondosvg}), linear-gradient(
+      308deg,
+      $colora 0%,
+      $colorb 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover, 100%;
+    background-position: 0px 0px, 0px 0px;
+    background-blend-mode: overlay;
+    width: 101%;
+    height: 101%;
+    top: -1%;
+    left: -1%;
+    border: solid;
+    position: absolute;
+    z-index: -1;
+  }
+  position: relative;
+  min-height: 100px;
+  max-height: 8000px;
+  // height: auto;
+  // overflow: hidden;
+  text-align: center;
+  padding-bottom: 6rem;
+  h1,
+  h2,
+  p {
+    padding: 0 25%;
+    @include cel{
+      padding: 0 5%;
+    }
+  }
+  p {
+    color: #fff;
+    margin: $margen 0;
+  }
+  span {
+    color: #fff;
+    font-weight: bold;
+  }
+}
 // clases
 
 // clase que centra los contenidos
@@ -64,10 +120,14 @@
 
 // menu principal
 nav {
+  @include cel{
+    display: none;
+  }
   @extend .bandeja;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 6%;
 
   a {
     color: #fff;
@@ -78,29 +138,35 @@ nav {
     gap: 1rem;
   }
   li {
-    position: relative;
     display: flex;
     padding: 2rem 0;
     img {
       padding-left: 0.3rem;
     }
+    // submenu
     ul {
-      width: 899%;
+      width: 80vw;
       background: $azul-oscuro;
       border-radius: $round;
       display: flex;
-      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: nowrap;
       position: absolute;
+      z-index: 999;
       top: 3.4rem;
+      left: 0%;
       display: none;
-      li {
+      li a {
         display: flex;
-        flex: 1;
+        text-align: left;       
         h2 {
-          font-size: clamp(1rem, 1.7vw, 20vw);
+          padding: 0!important;
+          font-size: clamp(.7rem, 1.4vw, 17vw);
         }
         p {
-          font-size: clamp(12px, 1.3vw, 18px);
+          padding: 0!important;
+          font-size: clamp(10px, 1.1vw, 16px);
         }
       }
     }
@@ -111,41 +177,9 @@ nav {
     }
   }
 }
-.hero {
-  // clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 100%);
-  // background: $azul-grisaseo;
-  &:before {
-    content: "";
-    clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 100%);
-    background: $azul-grisaseo;
-    width: 100vw;
-    height: 100%;
-    top: 0;
-    left: 0;
-    border: solid;
-    position: absolute;
-    z-index: -1;
-  }
-  position: relative;
-  min-height: 100px;
-  max-height: 8000px;
-  // height: auto;
-  // overflow: hidden;
-  text-align: center;
-  padding-bottom: 6rem;
-  h1,
-  h2,
-  p {
-    padding: 0 25%;
-  }
-  p {
-    color: #fff;
-    margin: $margen 0;
-  }
-  span {
-    color: #fff;
-    font-weight: bold;
-  }
+.hero-home {
+  $url: "/public/fondo-home.svg";
+  @include heroe($url, #515B98, #361B4C);
 }
 .btn-claro {
   @include botones($oscuro: true, $sinicono: false);
