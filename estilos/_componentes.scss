@@ -50,22 +50,19 @@
   &:before {
     content: "";
     clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
-    @include cel{
+    @include cel {
       clip-path: polygon(0 0%, 100% 0, 100% 93%, 0% 100%);
     }
-    @include hd{
+    @include hd {
       clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
     }
-    @include hdplus{
+    @include hdplus {
       clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
     }
     // #{$fondosvg}
     background: $azul-grisaseo;
-    background: url( #{$fondosvg}), linear-gradient(
-      308deg,
-      $colora 0%,
-      $colorb 100%
-    );
+    background: url(#{$fondosvg}),
+      linear-gradient(308deg, $colora 0%, $colorb 100%);
     background-repeat: no-repeat;
     background-size: cover, 100%;
     background-position: 0px 0px, 0px 0px;
@@ -89,7 +86,7 @@
   h2,
   p {
     padding: 0 25%;
-    @include cel{
+    @include cel {
       padding: 0 5%;
     }
   }
@@ -120,22 +117,50 @@
 
 // menu principal
 nav {
-  @include cel{
-    display: none;
-  }
   @extend .bandeja;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 6%;
 
+  @include cel {
+    padding-top: $margen;
+    margin-bottom: $margen-doble;
+    #logo {
+      width: auto;
+      height: 43px;
+      z-index: 9999;
+    }
+    .btn-claro {
+      position: absolute;
+      z-index: 9999;
+      top: 47%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
+    }
+  }
+
   a {
     color: #fff;
   }
   ul {
     display: inherit;
-    align-items: center;
     gap: 1rem;
+    // menu cel
+    @include cel {
+      position: absolute;
+      background: $azul-grisaseo;
+      top: 0px;
+      left: 0;
+      z-index: 999;
+      flex-direction: column;
+      width: 100%;
+      overflow-y: hidden;
+      height: 0rem;
+      align-items: center;
+      justify-content: center;
+    }
   }
   li {
     display: flex;
@@ -143,43 +168,142 @@ nav {
     img {
       padding-left: 0.3rem;
     }
-    // submenu
-    ul {
-      width: 80vw;
-      background: $azul-oscuro;
-      border-radius: $round;
+  }
+}
+
+// submenu prooudctos
+#sub-menu {
+  display: none;
+  position: absolute;
+  top: 4.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  z-index: 99999;
+  ul {
+    background: $azul-oscuro;
+    border-radius: $round;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: absolute;
+    gap: 2rem;
+    li {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: nowrap;
-      position: absolute;
-      z-index: 999;
-      top: 3.4rem;
-      left: 0%;
-      display: none;
-      li a {
-        display: flex;
-        text-align: left;       
-        h2 {
-          padding: 0!important;
-          font-size: clamp(.7rem, 1.4vw, 17vw);
-        }
-        p {
-          padding: 0!important;
-          font-size: clamp(10px, 1.1vw, 16px);
-        }
+      flex: 1 0 30%;
+      padding: 0;
+    }
+    li a {
+      display: flex;
+      text-align: left;
+      padding: 0 0 0 1rem ;
+      h2 {
+        padding: 0 !important;
+        font-size: clamp(0.7rem, 1.2vw, 1vw);
+        margin-bottom: 0.4rem;
+      }
+      p {
+        padding: initial;
+        margin: initial;
+        font-size: clamp(10px, 1.1vw, 16px);
       }
     }
-    &:hover {
-      ul {
-        display: block;
+  }
+  @include cel{
+    top: 7rem;
+    width: 90vw;
+
+    ul{
+      gap: 1.4rem;
+    }
+    li {
+      flex: 1 0 100%!important;
+      img{
+        width: 35px;
+      }
+      a{
+        h2 {
+          font-size: 1.2rem!important;
+        }
+        p {
+          font-size: 1rem!important;
+        }
       }
     }
   }
 }
+
+// boton de hamburguesa
+.menu-toggle {
+  position: absolute;
+  display: none;
+  @include cel {
+    display: block;
+    z-index: 99000;
+  }
+  right: 5vh;
+  top: 4vh;
+  z-index: 520;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border-top: 4px solid;
+  border-left: 1px solid transparent;
+  border-right: 1px solid transparent;
+  border-bottom: 4px solid;
+  color: $gris;
+  font-size: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -o-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.menu-toggle:before,
+.menu-toggle:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: currentColor;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-transition: -webkit-transform 0.25s ease-in-out;
+  transition: -webkit-transform 0.25s ease-in-out;
+  -o-transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out;
+  transition: transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+}
+
+button.is-active {
+  border-color: transparent;
+  border-left: none;
+}
+button.is-active:before {
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  -ms-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+button.is-active:after {
+  -webkit-transform: translate(-50%, -50%) rotate(-45deg);
+  -ms-transform: translate(-50%, -50%) rotate(-45deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  outline: none;
+  vertical-align: middle;
+}
+
 .hero-home {
   $url: "/public/fondo-home.svg";
-  @include heroe($url, #515B98, #361B4C);
+  @include heroe($url, #515b98, #361b4c);
 }
 .btn-claro {
   @include botones($oscuro: true, $sinicono: false);

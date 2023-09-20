@@ -1,51 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/getabedico.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Getabed</title>
   </head>
   <body>
     <div class="hero-home">
       <nav>
+        <button class="menu-toggle">Menu</button>
         <img
+          id="logo"
           src="/public/Getabed-logo.svg"
           alt="Getabed software para hoteles"
         />
-        <ul>
+        <ul id="menu">
           <li><a href="#">Historia</a></li>
           <li>
-            <a href="#">Productos</a>
-            <ul id="productos">
-              <li>
-                <img
-                  src="/public/ico-gestion-propiedades.svg"
-                  alt="Gestion de propiedades"
-                />
-                <div class="txt">
-                  <h2>Gestión de propiedades</h2>
-                  <p>
-                    Administra tus propiedades por medio del sistema de Getabed
-                    (PMS)
-                  </p>
-                </div>
-              </li>
-              <li>
-                <img
-                  src="/public/ico-gestion-propiedades.svg"
-                  alt="Gestion de propiedades"
-                />
-                <div class="txt">
-                  <h2>Gestión de propiedades</h2>
-                  <p>
-                    Administra tus propiedades por medio del sistema de Getabed
-                    (PMS)
-                  </p>
-                </div>
-              </li>
-            </ul>
-
+            <a href="#" id="productos">Productos</a>
             <img
               src="/public/flecha-abajo.svg"
               alt="flecha abajo del menu getabed"
@@ -57,6 +30,126 @@
         </ul>
         <a href="#" class="btn-claro">Ingresar</a>
       </nav>
+
+      
+      <div id="sub-menu">
+        <ul>
+          <li>
+            <img
+              src="/public/ico-gestion-propiedades.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Gestión de propiedades</h2>
+                <p>
+                  Administra tus propiedades por medio del sistema de Getabed
+                  (PMS)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-relacion-clientes.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Relación con clientes</h2>
+                <p>
+                  Gestiona la relación con tus cliente (CRM)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-motor-reservas.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Motor de Reservas </h2>
+                <p>
+                  (Booking Engine)
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-channel-manager.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Channel Manager</h2>
+                <p>
+                  Sistema de gestión de múltiples canales de distribución
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-gestion-contenidos.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Gestión de Contenidos</h2>
+                <p>
+                  Administra los contenidos de tus sitios web, fácil y rápido
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-dominios.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Dominios</h2>
+                <p>
+                  Registra o renueva dominios de Getabed
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-hospedaje.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Hospedaje</h2>
+                <p>
+                  Servicio de hospedaje para sitio web y correos electrónicos
+                </p>
+              </div>
+            </a>
+          </li>
+          <li>
+            <img
+              src="/public/ico-gestion-propiedades.svg"
+              alt="Gestion de propiedades"
+            />
+            <a href="#">
+            <div class="txt">
+                <h2>Plantillas</h2>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci fuga hic!
+                </p>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
       <div class="bandeja">
         <h1>El mejor <span>software</span> <b> para tu hotel</b></h1>
         <p>
@@ -104,7 +197,8 @@
           <li><img src="/public/pool.png" alt="pool" /></li>
           <li><img src="/public/contpaq.png" alt="contpaq" /></li>
           <li><img src="/public/openpay.png" alt="openpay" /></li>
-          <li><img src="/public/cityexpress.png" alt="cityexpress" /></li>
+          <li><img src="/public/hotelpay-logo.png" alt="hotel pay" /></li>
+          <li><img src="/public/paypal.png" alt="paypal" /></li>
           <li><img src="/public/lounchpad.png" alt="lounchpad" /></li>
         </ul>
       </div>
@@ -115,15 +209,17 @@
             <div class="columna">
               <p>
                 Es una plataforma todo en uno para la gestión de propiedades
-                hoteleras y alojamientos, ofreciendo herramientas esenciales para
-                administrar y optimizar su negocio de hospedaje.
+                hoteleras y alojamientos, ofreciendo herramientas esenciales
+                para administrar y optimizar su negocio de hospedaje.
               </p>
               <p>
-                <b>Desde la gestión de reservas hasta la atención al cliente
-                  personalizada</b>, nuestra solución integral lo ayuda a enfocarse en brindar la
-                  mejor experiencia a sus huéspedes.
-                </p>
-              </div>
+                <b
+                  >Desde la gestión de reservas hasta la atención al cliente
+                  personalizada</b
+                >, nuestra solución integral lo ayuda a enfocarse en brindar la
+                mejor experiencia a sus huéspedes.
+              </p>
+            </div>
             <a href="#" class="btn-claro">Descubre más</a>
             <a href="#">Habla con ventas</a>
           </div>
