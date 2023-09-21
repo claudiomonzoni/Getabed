@@ -54,24 +54,40 @@ productos.addEventListener("click", function(e){
 })
 
 // tabs del home
+const historia = document.getElementById("historia");
+const atencion = document.getElementById("atencion");
+const enfoque = document.getElementById("enfoque");
 
-function openCity(evt, tab) {
-  // Declare all variables
-  var i, tabcontent, tablinks;
+historia.addEventListener("click", function(e){
+  e.preventDefault()
+  openCity(e, 'tabhistoria')
+})
+atencion.addEventListener("click", function(e){
+  e.preventDefault()
+  openCity(e, 'tabatencion')
+})
+enfoque.addEventListener("click", function(e){
+  e.preventDefault()
+  openCity(e, 'tabenfoque')
+})
+
+function openCity(e, tab) {
 
   // Get all elements with class="tabcontent" and hide them
-  contentab = document.getElementsByClassName("contetab");
-  for (i = 0; i < contentab.length; i++) {
+  const contentab = document.getElementsByClassName("contetab");
+  for (let i = 0; i < contentab.length; i++) {
     contentab[i].style.display = "none";
   }
 
   // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tab");
-  for (i = 0; i < tablinks.length; i++) {
+  const tablinks = document.getElementsByClassName("tab");
+  for (let i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
   }
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tab).style.display = "block";
-  evt.currentTarget.className += " active";
+  console.log(e.currentTarget.querySelector('.tab'))
+  e.currentTarget.querySelector('.tab').className += " tabactivo";
+
 }
