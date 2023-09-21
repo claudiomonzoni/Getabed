@@ -1,15 +1,13 @@
 @use "variables" as *;
+@use "animaciones" as *;
 
 // mixin
 
 // todos los botones
-@mixin botones($oscuro, $sinicono) {
+@mixin botones($oscuro, $sinicono, $bordes) {
   display: inline-block;
   border-radius: $round;
   padding: 0.5rem 2.5rem 0.5rem 1rem;
-  @if ($sinicono) {
-    padding: 0.5rem 1.4rem;
-  }
   background: $azul-grisaseo;
   color: $naranja;
   position: relative;
@@ -24,11 +22,28 @@
     right: -2%;
     position: absolute;
   }
+  @if ($bordes){
+    background: transparent!important;
+    border: solid 1px $naranja;
+    color: $naranja!important;
+  }
+  @if ($sinicono) {
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    img{
+      margin: -.3rem -.6rem -.3rem .3rem;
+      height: 1.6rem;
+    }
+  }
 
   //   boton con fondo oscuro
   @if ($oscuro) {
     color: $azul-oscuro;
     background: $naranja;
+    &:hover{
+      color: $azul;
+    }
     &:after {
       content: "";
       height: 100%;
@@ -166,7 +181,7 @@ nav {
     display: flex;
     padding: 2rem 0;
     img {
-      padding-left: 0.3rem;
+      padding: 0 0.3rem;
     }
   }
 }
@@ -210,6 +225,18 @@ nav {
         font-size: clamp(10px, 1.1vw, 16px);
       }
     }
+    
+  }
+  
+  #cerrar{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    z-index: 9999;
+    display: none;
+    @include cel{
+      display: inline-flex;
+    }
   }
   @include cel{
     top: 7rem;
@@ -233,6 +260,11 @@ nav {
       }
     }
   }
+}
+
+.rotar-flecha{
+  @extend .anima;
+  transform: rotate(180deg);
 }
 
 // boton de hamburguesa
@@ -306,11 +338,14 @@ button {
   @include heroe($url, #515b98, #361b4c);
 }
 .btn-claro {
-  @include botones($oscuro: true, $sinicono: false);
+  @include botones($oscuro: true, $sinicono: false, $bordes: false);
 }
 .btn-oscuro {
-  @include botones($oscuro: false, $sinicono: false);
+  @include botones($oscuro: false, $sinicono: false, $bordes: false);
 }
 .btn-sinicono {
-  @include botones($oscuro: true, $sinicono: true);
+  @include botones($oscuro: true, $sinicono: true, $bordes: false);
+}
+.btn-bordes {
+  @include botones($oscuro: true, $sinicono: true, $bordes: true);
 }

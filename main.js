@@ -13,12 +13,12 @@ function esCell(x) {
     const menuIco = document.querySelector(".menu-toggle");
     const ingresar = document.querySelector("nav .btn-claro");
     const mainNav = document.getElementById("menu");
+    const submenu = document.querySelector('#sub-menu');
     console.log(mainNav)
     const abierto = false;
 
     function abrirMenuFull() {
       this.abierto = !this.abierto;
-      console.log(abierto);
       mainNav.classList.remove("menuFullAbierto");
       mainNav.classList.remove("desanimaMenu");
       menuIco.classList.toggle("is-active");
@@ -26,7 +26,7 @@ function esCell(x) {
 
       this.abierto
         ? mainNav.classList.toggle("menuFullAbierto")
-        : mainNav.classList.toggle("desanimaMenu");
+        : mainNav.classList.toggle("desanimaMenu"); submenu.classList.remove('mostrar-submenu');
     }
 
     menuIco.addEventListener("click", abrirMenuFull);
@@ -38,13 +38,19 @@ function esCell(x) {
 // revelar sub menu de productos
 const productos = document.querySelector('#productos');
 const submenu = document.querySelector('#sub-menu');
-const menu = document.getElementById("menu");
+const cerrar = document.getElementById("cerrar");
+const flecha = document.getElementById("flecha-productos");
+
 
 productos.addEventListener("click", function(e){
     e.preventDefault()
     submenu.classList.toggle('mostrar-submenu')
-})
-menu.addEventListener("click", function(e){
+    flecha.classList.toggle('rotar-flecha')
+  })
+  cerrar.addEventListener("click", function(e){
     e.preventDefault()
-   console.log("first")
+    submenu.classList.remove('mostrar-submenu')
+    flecha.classList.toggle('rotar-flecha')
+
 })
+
