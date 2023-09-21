@@ -22,17 +22,17 @@
     right: -2%;
     position: absolute;
   }
-  @if ($bordes){
-    background: transparent!important;
+  @if ($bordes) {
+    background: transparent !important;
     border: solid 1px $naranja;
-    color: $naranja!important;
+    color: $naranja !important;
   }
   @if ($sinicono) {
     padding: 0.5rem 1rem;
     display: inline-flex;
     align-items: center;
-    img{
-      margin: -.3rem -.6rem -.3rem .3rem;
+    img {
+      margin: -0.3rem -0.6rem -0.3rem 0.3rem;
       height: 1.6rem;
     }
   }
@@ -41,7 +41,7 @@
   @if ($oscuro) {
     color: $azul-oscuro;
     background: $naranja;
-    &:hover{
+    &:hover {
       color: $azul;
     }
     &:after {
@@ -213,7 +213,7 @@ nav {
     li a {
       display: flex;
       text-align: left;
-      padding: 0 0 0 1rem ;
+      padding: 0 0 0 1rem;
       h2 {
         padding: 0 !important;
         font-size: clamp(0.7rem, 1.2vw, 1vw);
@@ -225,44 +225,43 @@ nav {
         font-size: clamp(10px, 1.1vw, 16px);
       }
     }
-    
   }
-  
-  #cerrar{
+
+  #cerrar {
     position: absolute;
     top: 0px;
     right: 0;
     z-index: 9999;
     display: none;
-    @include cel{
+    @include cel {
       display: inline-flex;
     }
   }
-  @include cel{
+  @include cel {
     top: 7rem;
     width: 90vw;
 
-    ul{
+    ul {
       gap: 1.4rem;
     }
     li {
-      flex: 1 0 100%!important;
-      img{
+      flex: 1 0 100% !important;
+      img {
         width: 35px;
       }
-      a{
+      a {
         h2 {
-          font-size: 1.2rem!important;
+          font-size: 1.2rem !important;
         }
         p {
-          font-size: 1rem!important;
+          font-size: 1rem !important;
         }
       }
     }
   }
 }
 
-.rotar-flecha{
+.rotar-flecha {
   @extend .anima;
   transform: rotate(180deg);
 }
@@ -331,6 +330,155 @@ button {
   cursor: pointer;
   outline: none;
   vertical-align: middle;
+}
+// Tabs home
+#tabsGetabed {
+  #componente {
+    margin-top: $margen-doble;
+    padding: 0 10%;
+    display: flex;
+  
+    #barratabs {
+      display: flex;
+      flex-wrap: wrap;
+      flex: 1;
+      align-items: stretch;
+      align-content: space-between;
+      a {
+        transform: scale(1);
+        transform: none;
+      }
+
+      .tab {
+        flex: 1 0 100%;
+        padding: 1.5rem $margen;
+        position: relative;
+        h3 {
+          font-size: clamp(1.3rem, 1.5vw, 2rem);
+          color: $azul;
+        }
+      }
+      .tabactivo {
+        background: rgb(247, 247, 247);
+        background: linear-gradient(
+          90deg,
+          rgba(247, 247, 247, 1) 40%,
+          rgba(203, 172, 248, 1) 100%
+        );
+        h3 {
+          color: $papaya;
+        }
+        &:after {
+          content: "";
+          z-index: 200;
+          position: absolute;
+          right: -15px;
+          top: 44%;
+          transform: translateY(-50%);
+          transform: rotate(45deg);
+          width: 30px;
+          height: 30px;
+          background: $morado;
+        }
+        @include cel{
+          background: linear-gradient(
+            180deg,
+            rgba(247, 247, 247, 1) 40%,
+            rgba(203, 172, 248, 1) 100%
+          );
+          &:after {
+            content: "";
+            z-index: 200;
+            position: absolute;
+            left: 44%;
+            transform: translateX(-50%);
+            transform: rotate(45deg);
+            top: 90%;
+            width: 15px;
+            height: 15px;
+          }
+
+        }
+      }
+    }
+    #contenidostab {
+      position: relative;
+      flex: 2.5;
+      height: 60vh;
+      .contetab {
+        // &:last-child{
+        //   display: block;
+        // }
+        // display: none;
+        position: absolute;
+        top: 0;
+        img {
+          height: 60vh;
+          width: auto;
+          object-fit: cover;
+        }
+        .txt {
+          position: absolute;
+          width: 60%;
+          top: 50%;
+          transform: translateY(-50%);
+          right: -10%;
+          background: $azul-oscuro;
+          border-radius: $round;
+          padding: 1.5rem;
+          color: $gris;
+          a {
+            margin-top: 0.6rem;
+          }
+          b {
+            color: $naranja;
+          }
+        }
+      }
+    }
+
+    @include cel{
+      padding: 0%;
+      flex-wrap: wrap;
+      #barratabs {
+        flex: 1 0 100%;
+        justify-content: space-between;
+        .tab {
+          text-align: center;
+          padding: 1.5rem .7rem;
+          p{display: none;}
+          h3{
+            font-size: 1.1rem;
+          }
+        }
+      }
+      #contenidostab {
+        flex: 1 0 100%;
+        .contetab {
+          img {
+            height: 30vh;
+          }
+          .txt {
+            width: 90%;
+            top: 20vh;
+            left: 50%;
+            transform: translateY(0);
+            transform: translateX(-50%);
+            background: $azul-oscuro;
+            border-radius: $round;
+            padding: 1.5rem;
+            color: $gris;
+            a {
+              margin-top: 0.6rem;
+            }
+            b {
+              color: $naranja;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .hero-home {

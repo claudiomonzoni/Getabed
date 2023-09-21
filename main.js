@@ -14,7 +14,6 @@ function esCell(x) {
     const ingresar = document.querySelector("nav .btn-claro");
     const mainNav = document.getElementById("menu");
     const submenu = document.querySelector('#sub-menu');
-    console.log(mainNav)
     const abierto = false;
 
     function abrirMenuFull() {
@@ -54,3 +53,25 @@ productos.addEventListener("click", function(e){
 
 })
 
+// tabs del home
+
+function openCity(evt, tab) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  contentab = document.getElementsByClassName("contetab");
+  for (i = 0; i < contentab.length; i++) {
+    contentab[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tab");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(tab).style.display = "block";
+  evt.currentTarget.className += " active";
+}
