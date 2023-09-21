@@ -7,15 +7,15 @@
 //reset
 html {
   box-sizing: border-box;
-  font-size: clamp(12px, 1.2vw, 18px);
+  font-size: clamp(12px, 1.2vw, 17px);
   @include cel{
     font-size: clamp(14px, 1.5vw, 24px);
   }
   @include hd{
-    font-size: clamp(14px, 1.5vw, 24px);
+    font-size: clamp(12px, 1.3vw, 20px);
   }
   @include hdplus{
-    font-size: clamp(14px, 1.5vw, 24px);
+    font-size: clamp(14px, 1.5vw, 22px);
   }
   font-family: "Montserrat", sans-serif;
   scroll-behavior: smooth;
