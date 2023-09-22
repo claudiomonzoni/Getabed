@@ -4,7 +4,7 @@
   transition: all 0.25s ease-in-out;
 }
 
-// animacion menu
+// animacion menu celular
 @keyframes menuAbierto {
   from {
     height: 0rem;
@@ -35,7 +35,7 @@
   animation: menuCerrado 1s ease backwards;
 }
 
-//  animacion mostrar
+//  animacion mostrar submenu
 @keyframes mostrar {
   0% {
     top: 50%;
@@ -67,8 +67,39 @@
   animation: mostrar 1.2s ease forwards;
 }
 
-
 // mostrar sub-menu
-.mostrar-submenu{
-  display: block!important;
+.mostrar-submenu {
+  display: block !important;
+}
+
+// animacion de las tabs en el home
+
+@keyframes tabs {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+// animo los tabs
+.contetab {
+  animation: tabs 1s;
+}
+// animo el submenu
+@keyframes submenu {
+  from {
+    opacity: 0;
+scale:.9;
+}
+to {
+  opacity: 1;
+  scale:1;
+
+  }
+}
+#sub-menu {
+  animation: submenu 0.6s ease forwards;
 }

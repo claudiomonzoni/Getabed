@@ -87,7 +87,6 @@ function openCity(e, tab) {
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tab).style.display = "block";
-  console.log(e.currentTarget.querySelector('.tab'))
   e.currentTarget.querySelector('.tab').className += " tabactivo";
 
 }

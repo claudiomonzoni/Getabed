@@ -74,7 +74,7 @@
     @include hdplus {
       clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
     }
-    // #{$fondosvg}
+
     background: $azul-grisaseo;
     background: url(#{$fondosvg}),
       linear-gradient(308deg, $colora 0%, $colorb 100%);
@@ -194,7 +194,11 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
+  @include hdplus{
+    width: 30vw;
+  }
   z-index: 99999;
+  transform-origin: left;
   ul {
     background: $azul-oscuro;
     border-radius: $round;
@@ -218,6 +222,7 @@ nav {
         padding: 0 !important;
         font-size: clamp(0.7rem, 1.2vw, 1vw);
         margin-bottom: 0.4rem;
+        letter-spacing: normal;
       }
       p {
         padding: initial;
@@ -347,6 +352,7 @@ button {
       a {
         transform: scale(1);
         transform: none;
+        color: $azul-grisaseo;
       }
 
       .tab {
@@ -362,7 +368,7 @@ button {
         background: rgb(247, 247, 247);
         background: linear-gradient(
           90deg,
-          rgba(247, 247, 247, 1) 40%,
+          rgba(247, 247, 247, 0) 70%,
           rgba(203, 172, 248, 1) 100%
         );
         h3 {
@@ -383,7 +389,7 @@ button {
         @include cel{
           background: linear-gradient(
             180deg,
-            rgba(247, 247, 247, 1) 40%,
+            rgba(247, 247, 247, 0) 50%,
             rgba(203, 172, 248, 1) 100%
           );
           &:after {
@@ -479,6 +485,10 @@ button {
       }
     }
   }
+}
+
+#productosyservicios{
+  margin-top: $margen-doble;
 }
 
 .hero-home {
