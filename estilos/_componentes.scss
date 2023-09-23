@@ -114,6 +114,93 @@
     font-weight: bold;
   }
 }
+@mixin cartas() {
+  display: flex;
+  .izq,
+  .der {
+    flex: 1;
+    align-items: center;
+    display: flex;
+  }
+  .izq {
+    justify-content: center;
+  }
+  .bandeja-txt {
+    width: 70%;
+  }
+  p {
+    padding: 1rem 0;
+  }
+  b {
+    color: $azul;
+  }
+  .bandeja-img {
+    margin: $margen-doble 0;
+    position: relative;
+    width: 80%;
+    height: 70%;
+    margin-right: $margen;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:last-child {
+        width: 70%;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  @include cel {
+    flex-wrap: wrap;
+    .izq,
+    .der {
+      flex: 1 0 100%;
+    }
+    .izq {
+      min-height: 20rem;
+      text-align: center;
+    }
+    .der {
+      margin-top: 1rem;
+      justify-content: center;
+      height: 20rem;
+    }
+    .bandeja-txt {
+      width: 85%;
+    }
+    .bandeja-img {
+      width: 80%;
+      height: 80%;
+      margin-right: 0;
+    }
+  }
+}
+
+// fondo cartas
+@mixin fondo-carta($color){
+  background: $morado;
+  background: linear-gradient(
+    90deg,
+    rgba(247, 247, 247, 0) 13%,
+    $color 13%,
+    $color 100%
+  );
+  @include cel{
+    background: linear-gradient(
+      0deg,
+      rgba(247, 247, 247, 0) 43%,
+      $color 43%,
+      $color 100%
+    );
+
+  }
+}
+
+
 // clases
 
 // clase que centra los contenidos
@@ -194,7 +281,7 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
-  @include hdplus{
+  @include hdplus {
     width: 30vw;
   }
   z-index: 99999;
@@ -342,7 +429,7 @@ button {
     margin-top: $margen-doble;
     padding: 0 10%;
     display: flex;
-  
+
     #barratabs {
       display: flex;
       flex-wrap: wrap;
@@ -386,7 +473,7 @@ button {
           height: 30px;
           background: $morado;
         }
-        @include cel{
+        @include cel {
           background: linear-gradient(
             180deg,
             rgba(247, 247, 247, 0) 50%,
@@ -403,7 +490,6 @@ button {
             width: 15px;
             height: 15px;
           }
-
         }
       }
     }
@@ -412,10 +498,6 @@ button {
       flex: 2.5;
       height: 60vh;
       .contetab {
-        // &:last-child{
-        //   display: block;
-        // }
-        // display: none;
         position: absolute;
         top: 0;
         img {
@@ -443,7 +525,7 @@ button {
       }
     }
 
-    @include cel{
+    @include cel {
       padding: 0%;
       flex-wrap: wrap;
       #barratabs {
@@ -451,9 +533,11 @@ button {
         justify-content: space-between;
         .tab {
           text-align: center;
-          padding: 1.5rem .7rem;
-          p{display: none;}
-          h3{
+          padding: 1.5rem 0.7rem;
+          p {
+            display: none;
+          }
+          h3 {
             font-size: 1.1rem;
           }
         }
@@ -487,14 +571,13 @@ button {
   }
 }
 
-#productosyservicios{
-  margin-top: $margen-doble;
-}
-
+// clases basadas en mixin
 .hero-home {
   $url: "/public/fondo-home.svg";
   @include heroe($url, #515b98, #361b4c);
 }
+
+// botones
 .btn-claro {
   @include botones($oscuro: true, $sinicono: false, $bordes: false);
 }
@@ -506,4 +589,25 @@ button {
 }
 .btn-bordes {
   @include botones($oscuro: true, $sinicono: true, $bordes: true);
+}
+
+// cartas
+
+.getcarta {
+  @include cartas();
+}
+
+// fondo cartas
+// fondos
+.fondo-morado {
+  @include fondo-carta($morado)
+}
+.fondo-azul-gris {
+  @include fondo-carta($azul-grisaseo)
+}
+.fondo-azul-oscuro {
+  @include fondo-carta($azul-oscuro)
+}
+.fondo-azul {
+  @include fondo-carta($azul)
 }

@@ -1,5 +1,4 @@
-import './estilos/style.scss'
-
+import "./estilos/style.scss";
 
 // logica boton de hamburguesa
 //solo celular
@@ -13,7 +12,7 @@ function esCell(x) {
     const menuIco = document.querySelector(".menu-toggle");
     const ingresar = document.querySelector("nav .btn-claro");
     const mainNav = document.getElementById("menu");
-    const submenu = document.querySelector('#sub-menu');
+    const submenu = document.querySelector("#sub-menu");
     const abierto = false;
 
     function abrirMenuFull() {
@@ -25,7 +24,8 @@ function esCell(x) {
 
       this.abierto
         ? mainNav.classList.toggle("menuFullAbierto")
-        : mainNav.classList.toggle("desanimaMenu"); submenu.classList.remove('mostrar-submenu');
+        : mainNav.classList.toggle("desanimaMenu");
+      submenu.classList.remove("mostrar-submenu");
     }
 
     menuIco.addEventListener("click", abrirMenuFull);
@@ -35,58 +35,67 @@ function esCell(x) {
 }
 
 // revelar sub menu de productos
-const productos = document.querySelector('#productos');
-const submenu = document.querySelector('#sub-menu');
+const productos = document.querySelector("#productos");
+const submenu = document.querySelector("#sub-menu");
 const cerrar = document.getElementById("cerrar");
 const flecha = document.getElementById("flecha-productos");
 
-
-productos.addEventListener("click", function(e){
-    e.preventDefault()
-    submenu.classList.toggle('mostrar-submenu')
-    flecha.classList.toggle('rotar-flecha')
-  })
-  cerrar.addEventListener("click", function(e){
-    e.preventDefault()
-    submenu.classList.remove('mostrar-submenu')
-    flecha.classList.toggle('rotar-flecha')
-
-})
+productos.addEventListener("click", function (e) {
+  e.preventDefault();
+  submenu.classList.toggle("mostrar-submenu");
+  flecha.classList.toggle("rotar-flecha");
+});
+cerrar.addEventListener("click", function (e) {
+  e.preventDefault();
+  submenu.classList.remove("mostrar-submenu");
+  flecha.classList.toggle("rotar-flecha");
+});
 
 // tabs del home
 const historia = document.getElementById("historia");
 const atencion = document.getElementById("atencion");
 const enfoque = document.getElementById("enfoque");
 
-historia.addEventListener("click", function(e){
-  e.preventDefault()
-  openCity(e, 'tabhistoria')
-})
-atencion.addEventListener("click", function(e){
-  e.preventDefault()
-  openCity(e, 'tabatencion')
-})
-enfoque.addEventListener("click", function(e){
-  e.preventDefault()
-  openCity(e, 'tabenfoque')
-})
+historia.addEventListener("click", function (e) {
+  e.preventDefault();
+  abrirTab(e, "tabhistoria");
+});
+atencion.addEventListener("click", function (e) {
+  e.preventDefault();
+  abrirTab(e, "tabatencion");
+});
+enfoque.addEventListener("click", function (e) {
+  e.preventDefault();
+  abrirTab(e, "tabenfoque");
+});
 
-function openCity(e, tab) {
-
-  // Get all elements with class="tabcontent" and hide them
+function abrirTab(e, tab) {
+  // Obtengo todos los elementos de clase contetab
   const contentab = document.getElementsByClassName("contetab");
   for (let i = 0; i < contentab.length; i++) {
     contentab[i].style.display = "none";
   }
-
-  // Get all elements with class="tablinks" and remove the class "active"
+  
+  // Obtengo todos los elementos de clase tab
   const tablinks = document.getElementsByClassName("tab");
   for (let i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
   }
 
-  // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tab).style.display = "block";
-  e.currentTarget.querySelector('.tab').className += " tabactivo";
-
+  e.currentTarget.querySelector(".tab").className += " tabactivo";
 }
+
+// hacer scroll conla rueda del raton en el riel de cartas
+// const scrollContainer = document.querySelector("#riel");
+
+// const scrollRueda = (e) => {
+//   e.preventDefault(false);
+//   scrollContainer.scrollLeft += e.deltaY;
+// };
+
+// scrollContainer.addEventListener("wheel", (e) => {
+//   scrollRueda(e);
+// });
+
+
