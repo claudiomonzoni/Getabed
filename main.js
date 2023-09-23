@@ -87,15 +87,15 @@ function abrirTab(e, tab) {
 }
 
 // hacer scroll conla rueda del raton en el riel de cartas
-// const scrollContainer = document.querySelector("#riel");
+const scrollContainer = document.querySelector("#riel");
 
-// const scrollRueda = (e) => {
-//   e.preventDefault(false);
-//   scrollContainer.scrollLeft += e.deltaY;
-// };
+const scrollRueda = (e) => {
+  e.preventDefault(false);
+  scrollContainer.scrollLeft += e.deltaY;
+};
 
-// scrollContainer.addEventListener("wheel", (e) => {
-//   scrollRueda(e);
-// });
+scrollContainer.addEventListener("wheel", (e) => {
+  scrollRueda(e);
+});
 
 

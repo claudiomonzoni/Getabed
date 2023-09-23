@@ -86,7 +86,6 @@
     height: 101%;
     top: -1%;
     left: -1%;
-    border: solid;
     position: absolute;
     z-index: -1;
   }
@@ -202,6 +201,35 @@
 
 
 // clases
+
+.fondoanguloazul{
+position: relative;
+padding-bottom: 15%;
+&:before {
+  content: "";
+  clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+  @include cel {
+    clip-path: polygon(0 0%, 100% 0, 100% 93%, 0% 100%);
+  }
+  @include hd {
+    clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+  }
+  @include hdplus {
+    clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
+  }
+
+  background: linear-gradient(0deg, $fondo-claro 0%, rgba(255, 255, 255, 0) 100%);
+  background-repeat: no-repeat;
+  background-size: cover, 100%;
+  width: 101%;
+  height: 101%;
+  top: -1%;
+  left: -1%;
+  position: absolute;
+  z-index: -1;
+}
+
+}
 
 // clase que centra los contenidos
 .bandeja {
