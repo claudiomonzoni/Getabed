@@ -25,8 +25,8 @@
               alt="flecha abajo del menu getabed"
             />
           </li>
-          <li><a href="#">Precios y planes</a></li>
-          <li><a href="#">Atención y soporte</a></li>
+          <li><a href="#">Precios y Planes</a></li>
+          <li><a href="#">Atención y Soporte</a></li>
           <li><a href="#">Blog</a></li>
         </ul>
         <a href="#" class="btn-claro">Ingresar</a>
@@ -548,41 +548,104 @@
     </div>
     <!-- fin banner prueba gratis -->
 
-    <div id="contacta">
-      <h2>Contacta con nosotros</h2>
-      <p>
-        <b>Obtén más información sobre cómo Getabed puede ayudarte</b> a
-        optimizar y mejorar tu negocio hotelero, no dudes en ponerte en contacto
-        con nosotros. Estamos aquí para responder a todas tus preguntas y
-        brindarte una demostración personalizada de nuestro software.
-      </p>
-      <h4>Comunicate con nuestro equipo de ventas a través de:</h4>
-      <a href="mailto:ventas@getabed.mx" target="_blank">
-        <div class="recuadro">
-          <img src="/public/ico-email.svg" alt="ventas getabed" />
-          ventas@getabed.mx
-        </div>
-      </a>
-      <a href="tel:3320055182" target="_blank">
-        <div class="recuadro">
-          <img src="/public/ico-telefono.svg" alt="comunicate getabed" />
-          +1 (800) 33-2005-5182
-        </div>
-      </a>
-      <a href="#" id="formulario">
-        <div class="recuadro">
-          <img src="/public/ico-formulario.svg" alt="contácta getabed" />
-          formulario de contacto
-        </div>
-      </a>
-      <a href="https://wa.me/3318882177" >
-        <div class="recuadro">
-          <img src="/public/ico-whastapp.svg" alt="whatsapp getabed" />
-          whatsapp
-        </div>
-      </a>
-    </div>
+    <div id="contacta" class="fondoanguloazul">
+      <div id="form">
+        <h3>¿En que podemos ayudarte?</h3>
+        <form action="#">
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre completo"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Correo eléctronico"
+          />
+          <input
+            type="tel"
+            name="telefono"
+            id="telefono"
+            placeholder="Teléfono"
+          />
+          <input
+            type="text"
+            name="negocio"
+            id="negocio"
+            placeholder="Nombre de tu negocio"
+          />
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            placeholder="Mensaje"
+          ></textarea>
+          <input type="submit" value="Enviar" class="btn-sinicono" />
+        </form>
+        <p class="alerta-respuesta"></p>
+      </div>
 
+      <div class="bandeja">
+        <h2>Contacta con nosotros</h2>
+        <p>
+          <b>Obtén más información sobre cómo Getabed puede ayudarte</b> a
+          optimizar y mejorar tu negocio hotelero, no dudes en ponerte en
+          contacto con nosotros. Estamos aquí para responder a todas tus
+          preguntas y brindarte una demostración personalizada de nuestro
+          software.
+        </p>
+        <h4><b>Comunicate con nuestro equipo de ventas a través de:</b></h4>
+        <div class="conte-recuadros">
+          <a href="mailto:ventas@getabed.mx" target="_blank">
+            <div class="recuadro">
+              <img src="/public/ico-email.svg" alt="ventas getabed" />
+              ventas@getabed.mx
+            </div>
+          </a>
+          <a href="tel:3320055182" target="_blank">
+            <div class="recuadro">
+              <img src="/public/ico-telefono.svg" alt="comunicate getabed" />
+              +1 (800) 33-2005-5182
+            </div>
+          </a>
+          <a href="#" id="formulario">
+            <div class="recuadro">
+              <img src="/public/ico-formulario.svg" alt="contácta getabed" />
+              formulario de contacto
+            </div>
+          </a>
+          <a href="https://wa.me/3318882177">
+            <div class="recuadro">
+              <img src="/public/ico-whastapp.svg" alt="whatsapp getabed" />
+              whatsapp
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- fin contacto -->
+
+    <footer class="bandeja">
+      <div id="unete">
+        <h3>Únete a la comunidad</h3>
+        <img src="/public/Getabed-logo-footer.svg" alt="getabed software hoteles" />
+      </div>
+      <p>
+        <b>Síguenos en las redes sociales</b> para mantenerte informado de las
+        últimas noticias, actualizaciones y promociones de Getabed. También nos
+        encantaría escuchar tus experiencias y ver cómo nuestro software ha
+        transformado tu negocio.
+      </p>
+      <ul id="redes">
+        <li><a href="https://www.facebook.com/getabedsuite" target="_blank"><img src="/public/Facebook.svg" alt="facebook getabed"></a></li>
+        <li><a href="https://www.instagram.com/getabed_suite/" target="_blank"><img src="/public/instagram.svg" alt="instagram getabed"></a></li>
+        <li><a href="https://www.linkedin.com/company/16271321/admin/settings/manage-admins/" target="_blank"><img src="/public/ld.svg" alt="linkedin getabed"></a></li>
+      </ul>
+      <div id="terminos">
+        <a href="aviso.html" rel="nofollow">Aviso de privacidad</a>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
   </body>
 </html>

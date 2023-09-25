@@ -56,6 +56,7 @@ const historia = document.getElementById("historia");
 const atencion = document.getElementById("atencion");
 const enfoque = document.getElementById("enfoque");
 
+
 historia.addEventListener("click", function (e) {
   e.preventDefault();
   abrirTab(e, "tabhistoria");
@@ -81,10 +82,11 @@ function abrirTab(e, tab) {
   for (let i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
   }
-
+  
   document.getElementById(tab).style.display = "block";
   e.currentTarget.querySelector(".tab").className += " tabactivo";
 }
+
 
 // hacer scroll conla rueda del raton en el riel de cartas
 const scrollContainer = document.querySelector("#riel");

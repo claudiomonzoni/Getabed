@@ -115,7 +115,7 @@
 }
 @mixin cartas() {
   display: flex;
-  h2{
+  h2 {
     color: $azul-grisaseo;
   }
   .izq,
@@ -257,6 +257,26 @@ nav {
   align-items: center;
   margin-bottom: 6%;
 
+  a {
+    color: #fff;
+  }
+  ul {
+    display: inherit;
+    gap: 1rem;
+    @extend .anima;
+  }
+  li {
+    display: flex;
+    padding: $margen 0;
+
+    img {
+      padding-left: 0.5rem;
+      margin-bottom: 0.8rem;
+      transform-origin: center;
+      @extend .anima;
+    }
+  }
+
   @include cel {
     padding-top: $margen;
     margin-bottom: $margen-doble;
@@ -265,24 +285,7 @@ nav {
       height: 43px;
       z-index: 9999;
     }
-    .btn-claro {
-      position: absolute;
-      z-index: 9999;
-      top: 47%;
-      left: 50%;
-      transform: translateX(-50%);
-      display: none;
-    }
-  }
-
-  a {
-    color: #fff;
-  }
-  ul {
-    display: inherit;
-    gap: 1rem;
-    // menu cel
-    @include cel {
+    ul {
       position: absolute;
       background: $azul-grisaseo;
       top: 0px;
@@ -294,13 +297,17 @@ nav {
       height: 0rem;
       align-items: center;
       justify-content: center;
+      li {
+        padding: 1rem 0;
+      }
     }
-  }
-  li {
-    display: flex;
-    padding: 2rem 0;
-    img {
-      padding: 0 0.3rem;
+    .btn-claro {
+      position: absolute;
+      z-index: 9999;
+      top: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+      display: none;
     }
   }
 }
@@ -313,11 +320,11 @@ nav {
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
+  z-index: 99999;
+  transform-origin: left;
   @include hdplus {
     width: 30vw;
   }
-  z-index: 99999;
-  transform-origin: left;
   ul {
     background: $azul-oscuro;
     border-radius: $round;
@@ -349,12 +356,20 @@ nav {
         font-size: clamp(10px, 1.1vw, 16px);
       }
     }
+
+    @include cel {
+      gap: 0rem !important;
+      li a p {
+        font-size: 0.9rem !important;
+      }
+    }
   }
 
   #cerrar {
     position: absolute;
-    top: 0px;
-    right: 0;
+    top: -10px;
+    // top: -56px;
+    right: 0px;
     z-index: 9999;
     display: none;
     @include cel {
@@ -399,7 +414,7 @@ nav {
     z-index: 99000;
   }
   right: 5vh;
-  top: 4vh;
+  top: 3.5rem;
   z-index: 520;
   width: 30px;
   height: 22px;
@@ -497,13 +512,15 @@ button {
           content: "";
           z-index: 200;
           position: absolute;
-          right: -15px;
-          top: 44%;
+          right: -58px;
+          top: 50%;
           transform: translateY(-50%);
-          transform: rotate(45deg);
-          width: 30px;
-          height: 30px;
-          background: $morado;
+          width: 0px;
+          height: 0px;
+          border-left: 30px solid $morado;
+          border-right: 30px solid transparent;
+          border-top: 30px solid transparent;
+          border-bottom: 30px solid transparent;
         }
         @include cel {
           background: linear-gradient(
@@ -515,12 +532,13 @@ button {
             content: "";
             z-index: 200;
             position: absolute;
-            left: 44%;
+            left: 50%;
             transform: translateX(-50%);
-            transform: rotate(45deg);
-            top: 90%;
-            width: 15px;
-            height: 15px;
+            top: 100%;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            border-top: 20px solid $morado;
+            border-bottom: 20px solid transparent;
           }
         }
       }
@@ -530,6 +548,7 @@ button {
       flex: 2.5;
       height: 60vh;
       .contetab {
+        animation: tabs 1s;
         position: absolute;
         top: 0;
         img {
@@ -620,13 +639,14 @@ button {
   align-items: center;
   margin-top: $margen-doble;
   height: 45vh;
-  background: url(/public/fondo-prueba-gratis-banner.svg) no-repeat $azul-grisaseo;
+  background: url(/public/fondo-prueba-gratis-banner.svg) no-repeat
+    $azul-grisaseo;
   background-blend-mode: multiply;
   background-size: contain;
   .izq {
     flex: 1 0 35%;
     display: flex;
-    justify-content:  center;
+    justify-content: center;
     align-items: center;
   }
   .der {
@@ -636,39 +656,142 @@ button {
   h2 {
     color: #fff;
   }
-  p{
+  p {
     margin-bottom: 1rem;
-    &:first-of-type{
+    &:first-of-type {
       font-size: 1.3rem;
     }
   }
   b {
     color: $naranja;
   }
-  a{
+  a {
     margin-right: 1rem;
   }
-  @include cel{
+  @include cel {
     flex-wrap: wrap;
     height: auto;
     background-size: 100% 100%;
-    .izq, .der{
+    .izq,
+    .der {
       flex: 1 0 100%;
     }
-    .izq{
-      justify-content:  left;
+    .izq {
+      justify-content: left;
       padding: $margen 0 0 $margen;
     }
-    a{
+    a {
       margin-top: 1rem;
     }
   }
 }
+
+#contacta {
+  margin: $margen-doble 0;
+  text-align: center;
+  position: relative;
+  h2 {
+    color: $papaya;
+  }
+  h4 {
+    margin-top: $margen;
+  }
+  p {
+    margin-top: 1rem;
+    padding: 0 10%;
+  }
+  .conte-recuadros {
+    padding-top: $margen;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .recuadro {
+    img {
+      aspect-ratio: 1/1;
+      width: 40px;
+      margin-bottom: 0.6rem;
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $azul;
+    border-radius: $round;
+    color: #fff;
+    padding: 1.5rem $margen;
+  }
+  @include cel {
+    .conte-recuadros {
+      display: grid;
+      margin-bottom: $margen;
+    }
+  }
+}
+#form {
+  display: none;
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  background-color: $azul-grisaseo;
+  border-radius: $round;
+  width: 30%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  padding: $margen;
+  z-index: 9999;
+}
+
+footer {
+  padding: 0 10%;
+  margin-bottom: $margen;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $margen;
+  align-items: center;
+  h3{
+    color: $papaya;
+    font-size: 2rem;
+    padding-bottom: .5rem;
+  }
+  #unete, #redes{
+    flex: 1;
+  }
+  p{
+    flex: 3;
+  }
+  #redes {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+  #terminos {
+    border-top: 1px solid $azul-grisaseo;
+    padding-top: $margen;
+    text-align: center;
+    flex: 1 0 100%;
+    font-size: .7rem;
+  }
+  @include cel {
+    padding: 0;
+    #unete, #redes, p{
+      flex: 1 0 100%;
+      text-align: center;
+    }
+    #terminos {
+      font-size: .9rem;
+    }
+  }
+}
+
 // clases basadas en mixin
 .hero-home {
   $url: "/public/fondo-home.svg";
   @include heroe($url, #515b98, #361b4c);
-  a{
+  a {
     margin-bottom: 1rem;
   }
 }

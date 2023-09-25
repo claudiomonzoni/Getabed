@@ -42,11 +42,11 @@
     opacity: 0;
   }
   60% {
-    top: 50%;
+    top: 38%;
     opacity: 0;
   }
   100% {
-    top: 47%;
+    top: 38%;
     opacity: 1;
   }
 }
@@ -93,7 +93,7 @@ to {
 @keyframes tabs {
   from {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;

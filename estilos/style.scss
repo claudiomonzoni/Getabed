@@ -348,7 +348,7 @@ h3 {
     url(/public/fondo-svg-porque-home-getabed.svg);
   background-repeat: no-repeat;
   background-position: center right, top left;
-  background-size: contain, 70%;
+  background-size: contain, contain;
   h2 {
     color: $azul-grisaseo;
   }
@@ -364,12 +364,34 @@ h3 {
   }
   @include cel {
     height: auto;
-    background-position: bottom right, center left;
-    background-size: 90%, 120%;
+    background-position: bottom right, bottom left;
+    background-size: 90%, 170%;
     height: auto;
     padding-bottom: 430px;
     .bandeja {
       padding-right: 0;
     }
   }
+}
+input, textarea{
+  border: none;
+  color: #fff;
+  background: $azul-oscuro;
+  border-radius: $round;
+  padding: .5rem 1rem;
+  font-size: 1rem;
+  width: 100%;
+  margin-top: .5rem;
+}
+input[type="submit"]{
+width: auto;
+}
+
+::-ms-input-placeholder { /* Edge 12-18 */
+  color: #fff;
+}
+
+::placeholder {
+  color: #fff;
+  font-size: 1rem;
 }
