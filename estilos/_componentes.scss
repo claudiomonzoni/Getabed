@@ -115,6 +115,9 @@
 }
 @mixin cartas() {
   display: flex;
+  h2{
+    color: $azul-grisaseo;
+  }
   .izq,
   .der {
     flex: 1;
@@ -180,7 +183,7 @@
 }
 
 // fondo cartas
-@mixin fondo-carta($color){
+@mixin fondo-carta($color) {
   background: $morado;
   background: linear-gradient(
     90deg,
@@ -188,47 +191,48 @@
     $color 13%,
     $color 100%
   );
-  @include cel{
+  @include cel {
     background: linear-gradient(
       0deg,
       rgba(247, 247, 247, 0) 43%,
       $color 43%,
       $color 100%
     );
-
   }
 }
-
 
 // clases
 
-.fondoanguloazul{
-position: relative;
-padding-bottom: 15%;
-&:before {
-  content: "";
-  clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
-  @include cel {
-    clip-path: polygon(0 0%, 100% 0, 100% 93%, 0% 100%);
-  }
-  @include hd {
+.fondoanguloazul {
+  position: relative;
+  padding-bottom: 15%;
+  &:before {
+    content: "";
     clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
-  }
-  @include hdplus {
-    clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
-  }
+    @include cel {
+      clip-path: polygon(0 0%, 100% 0, 100% 93%, 0% 100%);
+    }
+    @include hd {
+      clip-path: polygon(0 0%, 100% 0, 100% 90%, 0% 100%);
+    }
+    @include hdplus {
+      clip-path: polygon(0 0%, 100% 0, 100% 85%, 0% 100%);
+    }
 
-  background: linear-gradient(0deg, $fondo-claro 0%, rgba(255, 255, 255, 0) 100%);
-  background-repeat: no-repeat;
-  background-size: cover, 100%;
-  width: 101%;
-  height: 101%;
-  top: -1%;
-  left: -1%;
-  position: absolute;
-  z-index: -1;
-}
-
+    background: linear-gradient(
+      0deg,
+      $fondo-claro 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover, 100%;
+    width: 101%;
+    height: 101%;
+    top: -1%;
+    left: -1%;
+    position: absolute;
+    z-index: -1;
+  }
 }
 
 // clase que centra los contenidos
@@ -599,10 +603,74 @@ button {
   }
 }
 
+.columna {
+  margin: $margen 0;
+  column-count: 2;
+  column-gap: 2rem;
+  @include cel {
+    column-count: 1;
+  }
+}
+// banner de pruebas gratis
+#prueba-gratis {
+  border-radius: $round;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  align-items: center;
+  margin-top: $margen-doble;
+  height: 45vh;
+  background: url(/public/fondo-prueba-gratis-banner.svg) no-repeat $azul-grisaseo;
+  background-blend-mode: multiply;
+  background-size: contain;
+  .izq {
+    flex: 1 0 35%;
+    display: flex;
+    justify-content:  center;
+    align-items: center;
+  }
+  .der {
+    flex: 1 0 65%;
+    padding: $margen;
+  }
+  h2 {
+    color: #fff;
+  }
+  p{
+    margin-bottom: 1rem;
+    &:first-of-type{
+      font-size: 1.3rem;
+    }
+  }
+  b {
+    color: $naranja;
+  }
+  a{
+    margin-right: 1rem;
+  }
+  @include cel{
+    flex-wrap: wrap;
+    height: auto;
+    background-size: 100% 100%;
+    .izq, .der{
+      flex: 1 0 100%;
+    }
+    .izq{
+      justify-content:  left;
+      padding: $margen 0 0 $margen;
+    }
+    a{
+      margin-top: 1rem;
+    }
+  }
+}
 // clases basadas en mixin
 .hero-home {
   $url: "/public/fondo-home.svg";
   @include heroe($url, #515b98, #361b4c);
+  a{
+    margin-bottom: 1rem;
+  }
 }
 
 // botones
@@ -628,14 +696,14 @@ button {
 // fondo cartas
 // fondos
 .fondo-morado {
-  @include fondo-carta($morado)
+  @include fondo-carta($morado);
 }
 .fondo-azul-gris {
-  @include fondo-carta($azul-grisaseo)
+  @include fondo-carta($azul-grisaseo);
 }
 .fondo-azul-oscuro {
-  @include fondo-carta($azul-oscuro)
+  @include fondo-carta($azul-oscuro);
 }
 .fondo-azul {
-  @include fondo-carta($azul)
+  @include fondo-carta($azul);
 }
