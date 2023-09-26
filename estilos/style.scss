@@ -44,12 +44,12 @@ ul {
 }
 
 h1,
-h2, h3 {
+h2,
+h3 {
   line-height: 1.1em;
   color: $naranja;
   font-family: "Kanit", sans-serif;
 }
-
 
 ol,
 ul {
@@ -234,14 +234,20 @@ h3 {
   // width: min(100% - 5rem, 95rem);
   margin-top: $margen-doble;
   #riel {
+    padding-left: calc((100% - (100% - 7rem)) / 2);
+    padding-right: calc((100% - (100% - 7rem)) / 2);
+    gap: $margen;
+    margin-top: $margen;
+    padding-bottom: $margen-doble;
+    overflow-x: scroll;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 60%;
     .getcarta {
       @include cel {
         scroll-snap-align: start;
       }
     }
-    padding-left: calc((100% - (100% - 7rem)) / 2);
-    padding-right: calc((100% - (100% - 7rem)) / 2);
-    gap: $margen;
     @include cel {
       padding-left: calc((100% - (100% - 3rem)) / 2);
       grid-auto-columns: 80%;
@@ -252,13 +258,6 @@ h3 {
     @include hdplus {
       padding-left: calc((100% - (100% - 14rem)) / 2);
     }
-    margin-top: $margen;
-    padding-bottom: $margen-doble;
-    overflow: hidden;
-    overflow-x: scroll;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 60%;
   }
 
   /* Firefox */
@@ -314,7 +313,7 @@ h3 {
     break-inside: avoid-column;
     margin-top: 1em;
     img {
-    max-width: 180px;
+      max-width: 180px;
     }
     background: $fondo-claro;
     border-radius: $round;
@@ -373,25 +372,56 @@ h3 {
     }
   }
 }
-input, textarea{
+input,
+textarea {
   border: none;
   color: #fff;
   background: $azul-oscuro;
   border-radius: $round;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   font-size: 1rem;
   width: 100%;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-input[type="submit"]{
-width: auto;
+input[type="submit"] {
+  width: auto;
 }
 
-::-ms-input-placeholder { /* Edge 12-18 */
+::-ms-input-placeholder {
+  /* Edge 12-18 */
   color: #fff;
 }
 
 ::placeholder {
   color: #fff;
   font-size: 1rem;
+}
+
+// estilos a las flechas del carrusel
+.splide{
+  margin-top: $margen;
+}
+.splide__arrows {
+  margin-left: $margen-lat;
+  position: absolute;
+  bottom: -$margen;
+  @include cel {
+    display: none;
+  }
+}
+.splide__arrow--prev {
+  transform: rotate(180deg);
+  margin-right: 1rem;
+  svg{
+    width: 20px;
+    height: 20px;
+    fill: $azul-grisaseo;
+  }
+}
+.splide__arrow--next {
+  svg{
+    width: 20px;
+    height: 20px;
+    fill: $azul-grisaseo;
+  }
 }

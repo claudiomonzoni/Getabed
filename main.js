@@ -1,4 +1,5 @@
 import "./estilos/style.scss";
+import { slideHome } from "./public/splide";
 
 // logica boton de hamburguesa
 //solo celular
@@ -56,7 +57,6 @@ const historia = document.getElementById("historia");
 const atencion = document.getElementById("atencion");
 const enfoque = document.getElementById("enfoque");
 
-
 historia.addEventListener("click", function (e) {
   e.preventDefault();
   abrirTab(e, "tabhistoria");
@@ -76,28 +76,48 @@ function abrirTab(e, tab) {
   for (let i = 0; i < contentab.length; i++) {
     contentab[i].style.display = "none";
   }
-  
+
   // Obtengo todos los elementos de clase tab
   const tablinks = document.getElementsByClassName("tab");
   for (let i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
   }
-  
+
   document.getElementById(tab).style.display = "block";
   e.currentTarget.querySelector(".tab").className += " tabactivo";
 }
 
-
 // hacer scroll conla rueda del raton en el riel de cartas
 const scrollContainer = document.querySelector("#riel");
 
-const scrollRueda = (e) => {
-  e.preventDefault(false);
-  scrollContainer.scrollLeft += e.deltaY;
-};
+// const scrollRueda = (e) => {
+//   e.preventDefault(false);
+//   scrollContainer.scrollLeft += e.deltaY;
+// };
 
-scrollContainer.addEventListener("wheel", (e) => {
-  scrollRueda(e);
-});
+// scrollContainer.addEventListener("wheel", (e) => {
+//   scrollRueda(e);
+// });
 
+// scrollContainer.onmousemove = (e) => {
+//   const porcentaje = e.clientX / (window.innerWidth) *2;
+//   scrollContainer.animate(
+//     {
+//       transform: `translateX(${porcentaje * scrollContainer.offsetWidth * -1}px)`
+//     },
+//     {
+//       fill: "forwards",
+//       duration: 6000,
+//     }
+//   );
+// };
 
+if (
+  window.location.pathname.length == 1 ||
+  window.location.pathname.length == 0 ||
+  window.location.pathname === "/index.html" ||
+  window.location.pathname === "/index"
+) {
+  //si estoy en el home llamo el carrusel de glide y las animaciones de gsap exclusivas del home
+  slideHome();
+}
