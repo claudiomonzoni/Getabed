@@ -7,30 +7,32 @@
     <title>Getabed</title>
   </head>
   <body>
-    <div class="hero-home">
-      <nav>
-        <button class="menu-toggle">Menu</button>
-        <img
+    <nav>
+      <button class="menu-toggle">Menu</button>
+      <a href="/">
+          <img
           id="logo"
           src="/public/Getabed-logo.svg"
           alt="Getabed software para hoteles"
-        />
-        <ul id="menu">
-          <li><a href="#">Historia</a></li>
+          />
+         </a>
+         <ul id="menu">
+          <li><a href="historia.html">Historia</a></li>
           <li>
             <a href="#" id="productos">Productos</a>
             <img
-              id="flecha-productos"
-              src="/public/flecha-abajo.svg"
-              alt="flecha abajo del menu getabed"
+            id="flecha-productos"
+            src="/public/flecha-abajo.svg"
+            alt="flecha abajo del menu getabed"
             />
           </li>
-          <li><a href="#">Precios y Planes</a></li>
-          <li><a href="#">Atención y Soporte</a></li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="preciosyplanes.html">Precios y Planes</a></li>
+          <li><a href="atencionysoporte.html">Atención y Soporte</a></li>
+          <li><a href="blog.html">Blog</a></li>
         </ul>
-        <a href="#" class="btn-claro">Ingresar</a>
+        <a href="https://admin.getabedsuite.com/" target="_blank" class="btn-claro">Ingresar</a>
       </nav>
+      <div class="hero-home">
 
       <div id="sub-menu">
         <a href="#" class="btn-sinicono" id="cerrar"
@@ -42,7 +44,7 @@
               src="/public/ico-gestion-propiedades.svg"
               alt="Gestion de propiedades"
             />
-            <a href="#">
+            <a href="gestion-propiedades.html">
               <div class="txt">
                 <h2>Gestión de propiedades</h2>
                 <p>
@@ -55,9 +57,9 @@
           <li>
             <img
               src="/public/ico-relacion-clientes.svg"
-              alt="Gestion de propiedades"
+              alt="relacion-clientes"
             />
-            <a href="#">
+            <a href="relacion-clientes.html">
               <div class="txt">
                 <h2>Relación con clientes</h2>
                 <p>Gestiona la relación con tus cliente (CRM)</p>
@@ -67,9 +69,9 @@
           <li>
             <img
               src="/public/ico-motor-reservas.svg"
-              alt="Gestion de propiedades"
+              alt="motor de reservas"
             />
-            <a href="#">
+            <a href="motor-reservas.html">
               <div class="txt">
                 <h2>Motor de Reservas</h2>
                 <p>(Booking Engine)</p>
@@ -79,9 +81,9 @@
           <li>
             <img
               src="/public/ico-channel-manager.svg"
-              alt="Gestion de propiedades"
+              alt="channel manager"
             />
-            <a href="#">
+            <a href="channel-manager.html">
               <div class="txt">
                 <h2>Channel Manager</h2>
                 <p>Sistema de gestión de múltiples canales de distribución</p>
@@ -91,9 +93,8 @@
           <li>
             <img
               src="/public/ico-gestion-contenidos.svg"
-              alt="Gestion de propiedades"
-            />
-            <a href="#">
+              alt="Gestion de contenidos" />
+            <a href="gestion-contenidos.html">
               <div class="txt">
                 <h2>Gestión de Contenidos</h2>
                 <p>
@@ -103,8 +104,8 @@
             </a>
           </li>
           <li>
-            <img src="/public/ico-dominios.svg" alt="Gestion de propiedades" />
-            <a href="#">
+            <img src="/public/ico-dominios.svg" alt="dominios getabed" />
+            <a href="dominios.html">
               <div class="txt">
                 <h2>Dominios</h2>
                 <p>Registra o renueva dominios de Getabed</p>
@@ -113,7 +114,7 @@
           </li>
           <li>
             <img src="/public/ico-hospedaje.svg" alt="Gestion de propiedades" />
-            <a href="#">
+            <a href="hospedaje.html">
               <div class="txt">
                 <h2>Hospedaje</h2>
                 <p>
@@ -127,7 +128,7 @@
               src="/public/ico-gestion-propiedades.svg"
               alt="Gestion de propiedades"
             />
-            <a href="#">
+            <a href="plantillas.html">
               <div class="txt">
                 <h2>Plantillas</h2>
                 <p>
@@ -212,8 +213,8 @@
                 mejor experiencia a sus huéspedes.
               </p>
             </div>
-            <a href="#" class="btn-claro">Descubre más</a>
-            <a href="#" class="btn-bordes">Habla con ventas</a>
+            <a href="#productosyservicios" class="btn-claro">Descubre más</a>
+            <a href="#contacta" class="btn-bordes">Habla con ventas</a>
           </div>
           <div class="der">
             <img
@@ -269,7 +270,7 @@
                   específicas, facilitando su éxito en un entorno competitivo y
                   cambiante.
                 </p>
-                <a href="#" class="btn-bordes">conoce más</a>
+                <a href="preciosyplanes.html" class="btn-bordes">precios y planes</a>
               </div>
             </div>
 
@@ -289,7 +290,7 @@
                   >
                   a resolver cualquier problema o inquietud.
                 </p>
-                <a href="#" class="btn-bordes">conoce más</a>
+                <a href="atencionysoporte.html" class="btn-bordes">atención y soporte</a>
               </div>
             </div>
 
@@ -308,144 +309,13 @@
                   >
                   nuestra oferta de productos y servicios.
                 </p>
-                <a href="#" class="btn-bordes">conoce más</a>
+                <a href="historia.html" class="btn-bordes">conoce más</a>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- fin tabs -->
-<!-- 
-      <div id="productosyservicios">
-        <h2 class="bandeja h-getabe">
-          <span>Getabed</span> <br />Productos y servicios
-        </h2>
-        <div id="riel">
-        
-            <div class="getcarta">
-              <div class="izq">
-                <div class="bandeja-txt">
-                  <img
-                    src="/public/ico-motor-reservas.svg"
-                    alt="motor de reservas getabed"
-                  />
-                  <h2>Gestión de reservas</h2>
-                  <p>
-                    Simplifica el proceso de reservas con nuestro intuitivo
-                    sistema de gestión.
-                    <b>Mantén un seguimiento en tiempo real</b> de las reservas,
-                    disponibilidad y tarifas de tus habitaciones.
-                  </p>
-                  <a href="#" class="btn-oscuro">motor de reservas</a>
-                </div>
-              </div>
-              <div class="der fondo-morado">
-                <div class="bandeja-img">
-                  <img
-                    src="/public/riel-motor-reservas-ima-getabed.jpg"
-                    alt="motor de reservas getabed"
-                  />
-                  <img
-                    src="public/riel-motor-reservas-svg-getabed.svg"
-                    alt="motor de reservas"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="getcarta">
-              <div class="izq">
-                <div class="bandeja-txt">
-                  <img
-                    src="/public/ico-channel-manager.svg"
-                    alt="channel manager getabed"
-                  />
-                  <h2>Channel Manager</h2>
-                  <p>
-                    Conecta
-                    <b
-                      >tu propiedad con las principales plataformas de
-                      reservas</b
-                    >
-                    en línea y mantén tus tarifas y disponibilidad sincronizadas
-                    automáticamente.
-                  </p>
-                  <a href="#" class="btn-oscuro">channel manager</a>
-                </div>
-              </div>
-              <div class="der fondo-azul-gris">
-                <div class="bandeja-img">
-                  <img
-                    src="/public/riel-channel-manager-ima-getabed.jpg"
-                    alt="channel manager getabed"
-                  />
-                  <img
-                    src="public/riel-channel-manager-svg-getabed.svg"
-                    alt="channel manager getabed"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="getcarta">
-              <div class="izq">
-                <div class="bandeja-txt">
-                  <img
-                    src="/public/ico-relacion-clientes.svg"
-                    alt="gestion de huéspedes getabed"
-                  />
-                  <h2>Gestión de huéspedes</h2>
-                  <p>
-                    <b>Mejora la satisfacción del cliente</b> con un seguimiento
-                    detallado de las preferencias y solicitudes de tus
-                    huéspedes.
-                  </p>
-                  <a href="#" class="btn-oscuro">sistema (CRM)</a>
-                </div>
-              </div>
-              <div class="der fondo-azul">
-                <div class="bandeja-img">
-                  <img
-                    src="/public/riel-gestion-huespedes-ima-getabed.jpg"
-                    alt="Gestion de huéspedes getabed"
-                  />
-                  <img
-                    src="public/riel-gestion-huespedes-svg-getabed.svg"
-                    alt="gestión de huéspedes getabed"
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="getcarta">
-              <div class="izq">
-                <div class="bandeja-txt">
-                  <img
-                    src="/public/ico-gestion-propiedades.svg"
-                    alt="gestion de propiedades getabed"
-                  />
-                  <h2>Análisis e informes</h2>
-                  <p>
-                    Obtén información valiosa sobre el rendimiento de tu negocio
-                    con <b>informes detallados y análisis de datos.</b>
-                  </p>
-                  <a href="#" class="btn-oscuro">análisis e informes</a>
-                </div>
-              </div>
-              <div class="der fondo-azul-oscuro">
-                <div class="bandeja-img">
-                  <img
-                    src="/public/riel-analisis-ima-getabed.jpg"
-                    alt="análisis e informes de datos getabed"
-                  />
-                  <img
-                    src="public/riel-analisis-svg-getabed.svg"
-                    alt="análisis e informes de datos getabed"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
 
       <div id="productosyservicios">
         <h2 class="bandeja h-getabe">
@@ -469,7 +339,7 @@
                     <b>Mantén un seguimiento en tiempo real</b> de las reservas,
                     disponibilidad y tarifas de tus habitaciones.
                   </p>
-                  <a href="#" class="btn-oscuro">motor de reservas</a>
+                  <a href="motor-reservas.html" class="btn-oscuro">motor de reservas</a>
                 </div>
               </div>
               <div class="der fondo-morado">
@@ -502,7 +372,7 @@
                     en línea y mantén tus tarifas y disponibilidad sincronizadas
                     automáticamente.
                   </p>
-                  <a href="#" class="btn-oscuro">channel manager</a>
+                  <a href="channel-manager.html" class="btn-oscuro">channel manager</a>
                 </div>
               </div>
               <div class="der fondo-azul-gris">
@@ -531,7 +401,7 @@
                     detallado de las preferencias y solicitudes de tus
                     huéspedes.
                   </p>
-                  <a href="#" class="btn-oscuro">sistema (CRM)</a>
+                  <a href="relacion-clientes.html" class="btn-oscuro">sistema (CRM)</a>
                 </div>
               </div>
               <div class="der fondo-azul">
@@ -559,7 +429,7 @@
                     Obtén información valiosa sobre el rendimiento de tu negocio
                     con <b>informes detallados y análisis de datos.</b>
                   </p>
-                  <a href="#" class="btn-oscuro">análisis e informes</a>
+                  <a href="gestion-propiedades.html" class="btn-oscuro">análisis e informes</a>
                 </div>
               </div>
               <div class="der fondo-azul-oscuro">
@@ -686,7 +556,7 @@
           <b>tu negocio hotelero al siguiente nivel con Getabed!</b>
         </p>
         <a href="#" class="btn-claro">Obtén prueba gratis</a>
-        <a href="#" class="btn-bordes">ver precios y planes</a>
+        <a href="preciosyplanes.html" class="btn-bordes">ver precios y planes</a>
       </div>
     </div>
     <!-- fin banner prueba gratis -->
@@ -749,7 +619,7 @@
           <a href="tel:3320055182" target="_blank">
             <div class="recuadro">
               <img src="/public/ico-telefono.svg" alt="comunicate getabed" />
-              +1 (800) 33-2005-5182
+              +33-2005-5182
             </div>
           </a>
           <a href="#" id="formulario">

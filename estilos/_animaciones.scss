@@ -10,12 +10,12 @@
     height: 0rem;
   }
   to {
-    height: 100vh;
+    height: 100dvh;
   }
 }
 @keyframes menuCerrado {
   from {
-    height: 100vh;
+    height: 100dvh;
   }
   to {
     height: 0rem;
@@ -38,15 +38,15 @@
 //  animacion mostrar submenu
 @keyframes mostrar {
   0% {
-    top: 50%;
+    top: 50dvh;
     opacity: 0;
   }
   60% {
-    top: 38%;
+    top: 70dvh;
     opacity: 0;
   }
   100% {
-    top: 38%;
+    top: 70dvh;
     opacity: 1;
   }
 }

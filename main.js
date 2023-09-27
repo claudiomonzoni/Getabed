@@ -52,7 +52,40 @@ cerrar.addEventListener("click", function (e) {
   flecha.classList.toggle("rotar-flecha");
 });
 
-// tabs del home
+
+// hacer scroll conla rueda del raton en el riel de cartas
+// const scrollContainer = document.querySelector("#riel");
+
+// const scrollRueda = (e) => {
+//   e.preventDefault(false);
+//   scrollContainer.scrollLeft += e.deltaY;
+// };
+
+// scrollContainer.addEventListener("wheel", (e) => {
+//   scrollRueda(e);
+// });
+
+// scrollContainer.onmousemove = (e) => {
+//   const porcentaje = e.clientX / (window.innerWidth) *2;
+//   scrollContainer.animate(
+//     {
+//       transform: `translateX(${porcentaje * scrollContainer.offsetWidth * -1}px)`
+//     },
+//     {
+//       fill: "forwards",
+//       duration: 6000,
+//     }
+//   );
+// };
+
+if (
+  window.location.pathname.length == 1 ||
+  window.location.pathname.length == 0 ||
+  window.location.pathname === "/index.html" ||
+  window.location.pathname === "/index"
+) {
+  //si estoy en el home llamo el carrusel de glide y las animaciones de gsap exclusivas del home
+  // tabs del home
 const historia = document.getElementById("historia");
 const atencion = document.getElementById("atencion");
 const enfoque = document.getElementById("enfoque");
@@ -87,37 +120,5 @@ function abrirTab(e, tab) {
   e.currentTarget.querySelector(".tab").className += " tabactivo";
 }
 
-// hacer scroll conla rueda del raton en el riel de cartas
-const scrollContainer = document.querySelector("#riel");
-
-// const scrollRueda = (e) => {
-//   e.preventDefault(false);
-//   scrollContainer.scrollLeft += e.deltaY;
-// };
-
-// scrollContainer.addEventListener("wheel", (e) => {
-//   scrollRueda(e);
-// });
-
-// scrollContainer.onmousemove = (e) => {
-//   const porcentaje = e.clientX / (window.innerWidth) *2;
-//   scrollContainer.animate(
-//     {
-//       transform: `translateX(${porcentaje * scrollContainer.offsetWidth * -1}px)`
-//     },
-//     {
-//       fill: "forwards",
-//       duration: 6000,
-//     }
-//   );
-// };
-
-if (
-  window.location.pathname.length == 1 ||
-  window.location.pathname.length == 0 ||
-  window.location.pathname === "/index.html" ||
-  window.location.pathname === "/index"
-) {
-  //si estoy en el home llamo el carrusel de glide y las animaciones de gsap exclusivas del home
   slideHome();
 }
