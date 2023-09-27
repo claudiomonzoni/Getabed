@@ -536,3 +536,11 @@ input[type="submit"] {
     background-size: cover;
   }
 }
+
+.conte-cartas-simples{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 50vh;
+  flex-wrap: wrap;
+}

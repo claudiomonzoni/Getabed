@@ -196,6 +196,7 @@
   }
 }
 
+
 // fondo cartas
 @mixin fondo-carta($color) {
   background: $morado;
@@ -216,6 +217,29 @@
 }
 
 // clases
+
+// carta simple 
+.carta-simple{
+  h3{
+    color: $azul-grisaseo;
+    b{
+      color: $papaya;
+    }
+  }
+  p{
+    b{
+      color: $azul;
+    }
+  }
+  img{
+    aspect-ratio: 1/1;
+    max-height: 5rem;
+  }
+  img, h3, p{
+    padding-bottom: 1rem;
+  }
+  max-width: 33%;
+}
 
 .fondoanguloazul {
   position: relative;
