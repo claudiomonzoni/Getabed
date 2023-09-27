@@ -1,12 +1,360 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Precios y planes de Getabed</title>
-</head>
-<body>
-    <h1>Precios y planes</h1>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/getabedico.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Getabed Precios y planes</title>
+  </head>
+  <body>
+    <nav>
+      <button class="menu-toggle">Menu</button>
+      <a href="/">
+        <img
+          id="logo"
+          src="/public/Getabed-logo.svg"
+          alt="Getabed software para hoteles"
+        />
+      </a>
+      <ul id="menu">
+        <li><a href="historia.html">Historia</a></li>
+        <li>
+          <a href="#" id="productos">Productos</a>
+          <img
+            id="flecha-productos"
+            src="/public/flecha-abajo.svg"
+            alt="flecha abajo del menu getabed"
+          />
+        </li>
+        <li>
+          <a href="preciosyplanes.html" class="selected">Precios y Planes</a>
+        </li>
+        <li><a href="atencionysoporte.html">Atención y Soporte</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+      <a
+        href="https://admin.getabedsuite.com/"
+        target="_blank"
+        class="btn-claro"
+        >Ingresar</a
+      >
+    </nav>
+
+    <div id="sub-menu">
+      <a href="#" class="btn-sinicono" id="cerrar"
+        >Cerrar <img src="/public/equis.svg" alt="cerrar"
+      /></a>
+      <ul>
+        <li>
+          <img
+            src="/public/ico-gestion-propiedades.svg"
+            alt="Gestion de propiedades"
+          />
+          <a href="gestion-propiedades.html">
+            <div class="txt">
+              <h2>Gestión de propiedades</h2>
+              <p>
+                Administra tus propiedades por medio del sistema de Getabed
+                (PMS)
+              </p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img
+            src="/public/ico-relacion-clientes.svg"
+            alt="relacion-clientes"
+          />
+          <a href="relacion-clientes.html">
+            <div class="txt">
+              <h2>Relación con clientes</h2>
+              <p>Gestiona la relación con tus cliente (CRM)</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img src="/public/ico-motor-reservas.svg" alt="motor de reservas" />
+          <a href="motor-reservas.html">
+            <div class="txt">
+              <h2>Motor de Reservas</h2>
+              <p>(Booking Engine)</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img src="/public/ico-channel-manager.svg" alt="channel manager" />
+          <a href="channel-manager.html">
+            <div class="txt">
+              <h2>Channel Manager</h2>
+              <p>Sistema de gestión de múltiples canales de distribución</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img
+            src="/public/ico-gestion-contenidos.svg"
+            alt="Gestion de contenidos"
+          />
+          <a href="gestion-contenidos.html">
+            <div class="txt">
+              <h2>Gestión de Contenidos</h2>
+              <p>Administra los contenidos de tus sitios web, fácil y rápido</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img src="/public/ico-dominios.svg" alt="dominios getabed" />
+          <a href="dominios.html">
+            <div class="txt">
+              <h2>Dominios</h2>
+              <p>Registra o renueva dominios de Getabed</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img src="/public/ico-hospedaje.svg" alt="Gestion de propiedades" />
+          <a href="hospedaje.html">
+            <div class="txt">
+              <h2>Hospedaje</h2>
+              <p>Servicio de hospedaje para sitio web y correos electrónicos</p>
+            </div>
+          </a>
+        </li>
+        <li>
+          <img
+            src="/public/ico-gestion-propiedades.svg"
+            alt="Gestion de propiedades"
+          />
+          <a href="plantillas.html">
+            <div class="txt">
+              <h2>Plantillas</h2>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa
+                adipisci fuga hic!
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="hero-precios">
+      <div class="bandeja">
+        <div class="mini">Planes de</div>
+        <h1>
+          <b>Precios y planes</b>
+        </h1>
+        <h2>
+          Adaptados a Hoteles <br />
+          y Alojamientos
+        </h2>
+        <p>
+          En Getabed, sabemos que
+          <b
+            >cada propiedad es única y cuenta con distintas necesidades y
+            objetivos</b
+          >
+          comerciales. Por ello, hemos diseñado dos planes de precios flexibles
+          que se ajustan a tus requerimientos y te permiten sacar el máximo
+          provecho de nuestras herramientas y servicios para optimizar la
+          gestión de tu propiedad y aumentar tus ingresos.
+        </p>
+      </div>
+      <div class="bandeja">
+        <img
+          src="/public/precios/precios-hero-pantalla.webp"
+          alt="precios y planes getabed"
+        />
+      </div>
+    </div>
+    <!-- fin hero -->
+
+    <div id="cartasprecios" class="fondoanguloazul">
+      <div class="bandeja">
+        <div id="comision">
+          <h2>Por comisión</h2>
+          <p>
+            <b>Desde 13%</b> de Comisión más IVA aplica para Hoteles con más de
+            40 habitaciones
+          </p>
+          <ul>
+            <li>PMS</li>
+            <li>Motor de reservas</li>
+            <li>Plantilla Web</li>
+            <li>Múltiples formas de pago</li>
+            <li>Soporte</li>
+            <li>Asignación de un Market Manager</li>
+          </ul>
+          <a href="#" class="btn-oscuro"><b>Prueba gratis</b> por 15 días</a>
+          <p class="terminos">Sin necesidad de tarjeta de crédito, cancela cuando quieras</p>
+        </div>
+        <div id="fee">
+          <h2>Fee mensual</h2>
+          <p>
+            <b>Desde 60 USD</b> depende el número de Habitaciones y generalmente aplica para Hoteles Boutique o de menos de 40 habitaciones
+          </p>
+          <ul>
+            <li>PMS</li>
+            <li>Channel Manager</li>
+            <li>Motor de reservas</li>
+            <li>Plantilla Web</li>
+            <li>Múltiples formas de pago</li>
+            <li>Soporte</li>
+            <li>Asignación de un Market Manager</li>
+            <li>Reportes</li>
+          </ul>
+          <a href="#" class="btn-claro"><b>Prueba gratis</b> por 15 días</a>
+          <p class="terminos">Sin necesidad de tarjeta de crédito, cancela cuando quieras</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="prueba-gratis" class="bandeja">
+      <div class="izq">
+        <div class="conte">
+          <img src="/public/lentes-getabed.svg" alt="Getabed prueba gratis" />
+          <h2>Comienza tu <br /><b>prueba gratuita</b> <br />hoy</h2>
+        </div>
+      </div>
+      <div class="der">
+        <p>
+          Si estás listo para experimentar todo lo que Getabed tiene para
+          ofrecer,
+          <b>¡regístrate ahora para obtener una prueba gratuita de 14 días!</b>
+          No se requiere tarjeta de crédito y puedes cancelar en cualquier
+          momento.
+        </p>
+        <p>
+          ¡Estamos ansiosos por tener la oportunidad de trabajar contigo y
+          ayudarte a llevar
+          <b>tu negocio hotelero al siguiente nivel con Getabed!</b>
+        </p>
+        <a href="#" class="btn-claro">Obtén prueba gratis</a>
+        <a href="preciosyplanes.html" class="btn-bordes"
+          >ver precios y planes</a
+        >
+      </div>
+    </div>
+    <!-- fin banner prueba gratis -->
+
+    <div id="contacta" class="fondoanguloazul">
+      <div id="form">
+        <a href="#" class="btn-sinicono" id="cerrarForm"
+          >Cerrar <img src="/public/equis.svg" alt="cerrar"
+        /></a>
+        <h3>¿En que podemos ayudarte?</h3>
+        <form action="#">
+          <input
+            type="text"
+            name="nombre"
+            id="nombre"
+            placeholder="Nombre completo"
+          />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Correo eléctronico"
+          />
+          <input
+            type="tel"
+            name="telefono"
+            id="telefono"
+            placeholder="Teléfono"
+          />
+          <input
+            type="text"
+            name="negocio"
+            id="negocio"
+            placeholder="Nombre de tu negocio"
+          />
+          <textarea
+            name="mensaje"
+            id="mensaje"
+            placeholder="Mensaje"
+          ></textarea>
+          <input type="submit" value="Enviar" class="btn-sinicono" />
+        </form>
+        <p class="alerta-respuesta"></p>
+      </div>
+
+      <div class="bandeja">
+        <h2>Contacta con nosotros</h2>
+        <p>
+          <b>Obtén más información sobre cómo Getabed puede ayudarte</b> a
+          optimizar y mejorar tu negocio hotelero, no dudes en ponerte en
+          contacto con nosotros. Estamos aquí para responder a todas tus
+          preguntas y brindarte una demostración personalizada de nuestro
+          software.
+        </p>
+        <h4><b>Comunicate con nuestro equipo de ventas a través de:</b></h4>
+        <div class="conte-recuadros">
+          <a href="mailto:ventas@getabed.mx" target="_blank">
+            <div class="recuadro">
+              <img src="/public/ico-email.svg" alt="ventas getabed" />
+              ventas@getabed.mx
+            </div>
+          </a>
+          <a href="tel:3320055182" target="_blank">
+            <div class="recuadro">
+              <img src="/public/ico-telefono.svg" alt="comunicate getabed" />
+              +33-2005-5182
+            </div>
+          </a>
+          <a href="#" id="formulario">
+            <div class="recuadro">
+              <img src="/public/ico-formulario.svg" alt="contácta getabed" />
+              formulario de contacto
+            </div>
+          </a>
+          <a href="https://wa.me/3318882177">
+            <div class="recuadro">
+              <img src="/public/ico-whastapp.svg" alt="whatsapp getabed" />
+              whatsapp
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- fin contacto -->
+
+    <footer class="bandeja">
+      <div id="unete">
+        <h3>Únete a la comunidad</h3>
+        <img
+          src="/public/Getabed-logo-footer.svg"
+          alt="getabed software hoteles"
+        />
+      </div>
+      <p>
+        <b>Síguenos en las redes sociales</b> para mantenerte informado de las
+        últimas noticias, actualizaciones y promociones de Getabed. También nos
+        encantaría escuchar tus experiencias y ver cómo nuestro software ha
+        transformado tu negocio.
+      </p>
+      <ul id="redes">
+        <li>
+          <a href="https://www.facebook.com/getabedsuite" target="_blank"
+            ><img src="/public/Facebook.svg" alt="facebook getabed"
+          /></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/getabed_suite/" target="_blank"
+            ><img src="/public/instagram.svg" alt="instagram getabed"
+          /></a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/company/16271321/admin/settings/manage-admins/"
+            target="_blank"
+            ><img src="/public/ld.svg" alt="linkedin getabed"
+          /></a>
+        </li>
+      </ul>
+      <div id="terminos">
+        <a href="aviso.html" rel="nofollow">Aviso de privacidad</a>
+        <a href="terminos.html" rel="nofollow">Términos y condiciones</a>
+      </div>
+    </footer>
     <script type="module" src="/main.js"></script>
-</body>
+  </body>
 </html>

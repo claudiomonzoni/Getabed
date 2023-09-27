@@ -436,47 +436,103 @@ input[type="submit"] {
 
 // historia ----------------------------------------------------------------------------------------------------------------------------------------
 
-#historia-txt{
+#historia-txt {
   padding-top: $margen-doble;
   background: url(/public/historia/fondo-texto.svg) no-repeat;
   background-size: contain;
-  h2{
+  h2 {
     color: $azul-grisaseo;
-    b{
+    b {
       color: $papaya;
     }
   }
-  p{
+  p {
     padding-top: 1rem;
   }
-  #bloquea{
+  #bloquea {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     margin-bottom: $margen-doble;
-    h2{
+    h2 {
       flex: 1;
     }
-    div{
+    div {
       flex: 2;
       border-left: solid 1px $azul-grisaseo;
       padding-left: $margen;
       padding-bottom: 1rem;
     }
-    @include cel{
-      h2, div{
+    @include cel {
+      h2,
+      div {
         flex: 1 0 100%;
       }
     }
   }
-  .columna-triple{
+  .columna-triple {
     border-top: solid $azul-grisaseo 1px;
     padding-top: 1rem;
-    @include cel{
+    @include cel {
       border-top: none;
       border-left: solid $azul-grisaseo 1px;
       padding-left: $margen;
     }
   }
+}
 
+// precios y planes --------------------------------------------------------------------------------------------------------------
+
+#cartasprecios {
+  background: url(/public/precios/fondo-precios.svg) no-repeat;
+  background-position: center center;
+  background-size: contain;
+  background-blend-mode: multiply;
+  .bandeja {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0 10%;
+    #comision,
+    #fee {
+      padding: $margen;
+      flex: 1;
+      border-radius: $round;
+      ul {
+        border-top: solid 1px $papaya;
+        border-bottom: solid 1px $papaya;
+        padding: 1rem 0;
+        margin: 1rem 0;
+      }
+    }
+    #comision{
+      h2{
+        color: $azul-grisaseo;
+      }
+      ul{
+        border-top: solid 1px $azul-grisaseo;
+        border-bottom: solid 1px $azul-grisaseo;
+      }
+      background: $naranja;
+    }
+    #fee{
+      h2{
+        color: $naranja;
+      }
+      color: #fff;
+      background: $azul-grisaseo;
+    }
+    .terminos{
+      font-size: .8rem;
+      padding-top: 1rem;
+    }
+  }
+  @include cel{
+    .bandeja{
+      flex-wrap: wrap;
+    padding: 0;
+    }
+    background-size: cover;
+  }
 }

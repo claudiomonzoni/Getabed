@@ -104,6 +104,10 @@
       padding: 0 5%;
     }
   }
+  h2{
+    color: #fff;
+    padding-top: $margen;
+  }
   p {
     color: #fff;
     margin: $margen 0;
@@ -111,6 +115,12 @@
   span {
     color: #fff;
     font-weight: bold;
+  }
+  .mini{
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: normal;
+    transform: translateY(.2rem);
+    color: #fff;
   }
 }
 @mixin cartas() {
@@ -332,7 +342,7 @@ nav {
 #sub-menu {
   display: none;
   position: absolute;
-  top: 4.5rem;
+  top: 6.5rem;
   left: 50%;
   transform: translateX(-50%);
   width: 40vw;
@@ -370,6 +380,7 @@ nav {
         padding: initial;
         margin: initial;
         font-size: clamp(10px, 1.1vw, 16px);
+        color: #fff;
       }
     }
 
@@ -768,6 +779,17 @@ button {
   transform: translateX(-50%);
   padding: $margen;
   z-index: 9999;
+  @include cel{
+    width: 90%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #cerrarForm{
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
 footer {
@@ -800,6 +822,9 @@ footer {
     text-align: center;
     flex: 1 0 100%;
     font-size: 0.7rem;
+    a{
+      margin-left: 1rem;
+    }
   }
   @include cel {
     padding: 0;
@@ -843,6 +868,26 @@ footer {
   @include cel{
     img{
       padding: 0 $margen;
+    }
+  }
+}
+.hero-precios{
+  $url: "/public/fondo-home.svg";
+  @include heroe($url, #515b98, #361b4c);
+  position: relative;
+
+  &:before {
+    content: "";
+    clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 90%);
+    @include cel {
+      clip-path: polygon(0 0%, 100% 0, 100% 83%, 0% 90%);
+    }
+    @include hd {
+      clip-path: polygon(0 0%, 100% 0, 100% 80%, 0% 90%);
+    }
+    @include hdplus {
+      clip-path: polygon(0 0%, 100% 0, 100% 75%, 0% 90%);
+      // clip-path:polygon(-100vmax -100vmax, 100% -100vmax, 100% 90vmax, -100vmax 100%,);
     }
   }
 }

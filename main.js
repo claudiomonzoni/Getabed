@@ -52,7 +52,23 @@ cerrar.addEventListener("click", function (e) {
   flecha.classList.toggle("rotar-flecha");
 });
 
+// Abrir el formulario en el banner de contacto
 
+const btnform = document.getElementById("formulario");
+const formulario = document.getElementById("form");
+const cerrarForm = document.getElementById("cerrarForm");
+
+btnform.addEventListener("click", function (e) {
+  e.preventDefault();
+  formulario.style.display = "block";
+})
+cerrarForm.addEventListener("click", function (e) {
+  e.preventDefault();
+  formulario.style.display = "none";
+})
+
+
+// Abrir el formulario en el banner de contacto
 // hacer scroll conla rueda del raton en el riel de cartas
 // const scrollContainer = document.querySelector("#riel");
 
