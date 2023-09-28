@@ -507,50 +507,86 @@ input[type="submit"] {
         font-weight: bold;
       }
     }
-    #comision{
-      h2{
+    #comision {
+      h2 {
         color: $azul-grisaseo;
       }
-      ul{
+      ul {
         border-top: solid 1px $azul-grisaseo;
         border-bottom: solid 1px $azul-grisaseo;
       }
       color: $azul-oscuro;
       background: $naranja;
     }
-    #fee{
-      h2{
+    #fee {
+      h2 {
         color: $naranja;
       }
       color: #fff;
       background: $azul-grisaseo;
     }
-    .terminos{
-      font-size: .8rem;
+    .terminos {
+      font-size: 0.8rem;
       padding-top: 1rem;
     }
   }
-  @include cel{
-    .bandeja{
+  @include cel {
+    .bandeja {
       flex-wrap: wrap;
-    padding: 0;
+      padding: 0;
     }
     background-size: cover;
   }
 }
 
-.conte-cartas-simples-precios{
+.conte-cartas-simples-precios {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 50vh;
-  @include cel{
+  @include cel {
     flex-wrap: wrap;
-    .carta-simple{
+    .carta-simple {
       margin-top: $margen;
       max-width: 100%;
 
       flex: 1 0 100%;
+    }
+  }
+}
+
+// atencion y soporte -----------------------------------------------------------------------------------------------------'
+
+#testimonio-atencion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 10%;
+  h2 {
+    color: $azul-grisaseo;
+    padding: 2rem 0;
+  }
+  b {
+    color: $papaya;
+  }
+  
+  .testimonio:first-child {
+    b {
+      color: #fff;
+    }
+  }
+  @include cel {
+    flex-wrap: wrap;
+    padding: 0%;
+    h2{
+      padding: 1rem 0;
+    }
+  
+  }
+  @include hdplus{
+    #conte-testimonios {
+      max-width: 60%;
     }
   }
 }
