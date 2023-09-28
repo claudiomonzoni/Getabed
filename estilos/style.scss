@@ -504,6 +504,7 @@ input[type="submit"] {
         border-bottom: solid 1px $papaya;
         padding: 1rem 0;
         margin: 1rem 0;
+        font-weight: bold;
       }
     }
     #comision{
@@ -514,6 +515,7 @@ input[type="submit"] {
         border-top: solid 1px $azul-grisaseo;
         border-bottom: solid 1px $azul-grisaseo;
       }
+      color: $azul-oscuro;
       background: $naranja;
     }
     #fee{
@@ -537,10 +539,18 @@ input[type="submit"] {
   }
 }
 
-.conte-cartas-simples{
+.conte-cartas-simples-precios{
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 50vh;
-  flex-wrap: wrap;
+  @include cel{
+    flex-wrap: wrap;
+    .carta-simple{
+      margin-top: $margen;
+      max-width: 100%;
+
+      flex: 1 0 100%;
+    }
+  }
 }
