@@ -620,8 +620,8 @@ input[type="submit"] {
     @include cel {
       padding: 0 $margen $margen;
       flex-wrap: wrap;
-      .carta-simple {
-      }
+      // .carta-simple {
+      // }
     }
   }
 
@@ -659,5 +659,22 @@ input[type="submit"] {
     background-position: top left;
     background-size: 100% 100%;
     z-index: -100;
+  }
+}
+
+.aprovecha-channel{
+  padding: $margen-doble 20% 0;
+  text-align: center;
+  h2{
+padding-bottom: $margen;
+    b{
+      color: $papaya;
+    }
+  }
+  b{
+    color: $azul
+  };
+  @include cel{
+    padding: $margen-doble 5% 0;
   }
 }
