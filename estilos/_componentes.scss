@@ -284,6 +284,9 @@
   overflow: hidden;
   backdrop-filter: blur(5px);
   filter: drop-shadow(0px 3px 4px rgba(46, 49, 66, 0.4));
+  img{
+    object-fit: contain;
+  }
   p {
     padding: 0 $margen !important;
     max-width: 60%;
@@ -333,7 +336,10 @@
   p {
     padding-bottom: 1rem;
   }
-  min-width: 33%;
+  width: 33%;
+  @include cel{
+    width: 100%;
+  }
 }
 
 .fondoanguloazul {
@@ -1015,9 +1021,9 @@ footer {
   @include heroe($url, #515b98, #361b4c);
   margin-bottom: $margen-doble;
 }
-.hero-pms {
-  $url: "/atencion/fondo-atencion-getabed.svg";
-  @include heroe($url, #515b98, #361b4c);
+.hero-productos {
+  $url: "/public/fondo-home.svg";
+  @include heroe($url, #6919d2, #353b67);
   margin-bottom: $margen-doble;
 }
 
