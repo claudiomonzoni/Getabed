@@ -156,10 +156,10 @@
   }
   .bandeja-img {
     margin: $margen-doble 0;
-    position: relative;
     aspect-ratio: 1/1;
     width: 60%;
     margin-right: $margen;
+    position: relative;
     img {
       width: 100%;
       height: 100%;
@@ -208,6 +208,19 @@
   }
 }
 
+// solo las cartas del slider en el home
+.splide__slide{
+
+  .bandeja-img img{ 
+    &:nth-child(2) {
+        transform: translate(-20%, -50%)!important;
+        @include cel{
+          transform: translate(-50%, -50%)!important;
+        }
+      }
+    }
+}
+
 // fondo cartas
 @mixin fondo-carta($color) {
   background: $morado;
@@ -224,6 +237,36 @@
       $color 43%,
       $color 100%
     );
+  }
+}
+@mixin fondo-productos($imagen){
+  padding-top: $margen-doble;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: "";
+    top: -100vh;
+    left: -35vw;
+    width: 100%;
+    height: 200vh;
+    background: url(#{$imagen}) no-repeat;
+    background-position: top left;
+    background-size: 100% 100%;
+    z-index: -100;
+  }
+}
+
+.fondo-productos-cartas {
+  @include fondo-productos('/public/fondo-productos-cartas.svg')
+
+}
+.fondo-productos-cartas-dominios {
+  @include fondo-productos('/public/dominios/fondo-cartas-dominios.svg');
+  &::after{
+    top: 0vh;
+    left: 0vw;
+    background-position: center center;
+    background-size: cover;
   }
 }
 
