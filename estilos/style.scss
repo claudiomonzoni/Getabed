@@ -663,3 +663,27 @@ padding-bottom: $margen;
     padding: $margen-doble 5% 0;
   }
 }
+
+
+// legales
+.legales{
+  margin-top: -4rem;
+padding: 0 10%;
+  h2, h3{
+    color: $azul-grisaseo;
+    margin-bottom: 1rem;
+  }
+  p{
+    margin-bottom: 1rem;
+  }
+  ul{
+    padding: 0 1rem 1rem ;
+  }
+  li{
+    list-style: disc;
+    padding: .2rem 0;
+  }
+  @include cel{
+    padding: 0 5%;
+  }
+}
