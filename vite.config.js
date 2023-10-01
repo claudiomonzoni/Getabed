@@ -18,6 +18,8 @@ export default defineConfig({
         dominios: resolve(__dirname, 'dominios.html'),
         hospedaje: resolve(__dirname, 'hospedaje.html'),
         plantillas: resolve(__dirname, 'plantillas.html'),
+        aviso: resolve(__dirname, 'aviso.html'),
+        terminos: resolve(__dirname, 'terminos.html'),
       },
     },
   },
