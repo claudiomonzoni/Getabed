@@ -458,8 +458,9 @@ nav {
   li {
     display: flex;
     img {
-      max-width: 25px;
-      padding-left: 0.5rem;
+      // flecha
+      max-width: 20px;
+      margin-left: 0.5rem;
       transform-origin: center;
       @extend .anima;
     }
@@ -468,6 +469,7 @@ nav {
   @include cel {
     width: 100%;
     padding: $margen;
+    background-position: top center;
     #logo {
       position: relative;
       width: auto;
@@ -476,7 +478,10 @@ nav {
     }
     ul {
       position: absolute;
-      background: $azul-grisaseo;
+      background: url(/public/fondo-home.svg) no-repeat $azul-grisaseo;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
       top: 0px;
       left: 0;
       z-index: 100;
@@ -490,7 +495,7 @@ nav {
       li {
         padding: 0.5rem 0;
         img {
-          max-width: 30px;
+          max-width: 25px;
           padding-left: 0.5rem;
           transform-origin: center;
         }
@@ -597,7 +602,7 @@ nav {
 }
 
 .rotar-flecha {
-  @extend .anima;
+  transform-origin: center;
   transform: rotate(180deg);
 }
 
