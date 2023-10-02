@@ -105,15 +105,25 @@ if (
   const abrirvideo = document.getElementById("vervideo");
   const cerrarvideo = document.getElementById("cerrarvideo");
   const video = document.getElementById("video");
+  const videoHome = document.getElementById("videoHome");
 
   abrirvideo.addEventListener("click", (e) => {
     e.preventDefault()
     video.style.display = "flex";
+    videoHome.play()
   });
   cerrarvideo.addEventListener("click", (e) => {
     e.preventDefault()
     video.style.display = "none";
+    videoHome.pause()
   });
+  
+  document.addEventListener('keydown', evt => {
+    if (evt.key === 'Escape') {
+      video.style.display = "none";
+      videoHome.pause()
+    }
+}); 
   // tabs del home
   const historia = document.getElementById("historia");
   const atencion = document.getElementById("atencion");

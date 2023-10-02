@@ -459,9 +459,10 @@ nav {
     display: flex;
     img {
       // flecha
-      max-width: 20px;
+      max-width: 14px;
       margin-left: 0.5rem;
       transform-origin: center;
+      padding: 0;
       @extend .anima;
     }
   }

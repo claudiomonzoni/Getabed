@@ -112,7 +112,7 @@ h3 {
 
 // home------------------------------------------------------------------------------------------------------------------------------------------
 
-#video{
+#video {
   display: none;
   position: fixed;
   z-index: 99999;
@@ -123,20 +123,20 @@ h3 {
   // display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(92, 98, 132, .7);
+  background: rgba(92, 98, 132, 0.7);
   backdrop-filter: blur(5px);
 
-  video{
+  video {
     position: relative;
     width: 70%;
     height: auto;
-    @include cel{
+    @include cel {
       width: 95%;
-    height: auto;
+      height: auto;
     }
   }
 }
-#cerrarvideo{
+#cerrarvideo {
   position: absolute;
   top: 5%;
   right: 3%;
@@ -372,40 +372,76 @@ h3 {
   }
 }
 
+// #porque {
+//   margin-top: $margen;
+//   display: flex;
+//   align-items: center;
+//   height: 70vh;
+//   background: url(/public/porque-elegir-getabed-home.webp),
+//     url(/public/fondo-svg-porque-home-getabed.svg);
+//   background-repeat: no-repeat;
+//   background-position: center right, top left;
+//   background-size: contain, contain;
+//   h2 {
+//     color: $azul-grisaseo;
+//   }
+//   p {
+//     padding-bottom: 1rem;
+//   }
+//   span,
+//   b {
+//     color: $papaya;
+//   }
+//   .bandeja {
+//     padding-right: 30%;
+//   }
+//   @include cel {
+//     height: auto;
+//     background-position: bottom right, bottom left;
+//     background-size: 90%, 170%;
+//     height: auto;
+//     padding-bottom: 430px;
+//     .bandeja {
+//       padding-right: 0;
+//     }
+//   }
+// }
+
 #porque {
   margin-top: $margen;
   display: flex;
   align-items: center;
   height: 70vh;
-  background: url(/public/porque-elegir-getabed-home.webp),
-    url(/public/fondo-svg-porque-home-getabed.svg);
-  background-repeat: no-repeat;
-  background-position: center right, top left;
-  background-size: contain, contain;
   h2 {
     color: $azul-grisaseo;
   }
   p {
     padding-bottom: 1rem;
   }
+  img{
+    height: 100%;
+    width: auto;
+  }
   span,
   b {
     color: $papaya;
   }
   .bandeja {
-    padding-right: 30%;
+    width: 50%;
+    padding: 0 2rem;
   }
   @include cel {
     height: auto;
-    background-position: bottom right, bottom left;
-    background-size: 90%, 170%;
-    height: auto;
-    padding-bottom: 430px;
+flex-wrap: wrap;
     .bandeja {
-      padding-right: 0;
+     width: 100%;
+    }
+    img{
+      padding-left: 2rem;
     }
   }
 }
+
 input,
 textarea {
   border: none;
@@ -630,7 +666,6 @@ input[type="submit"] {
     color: $papaya;
   }
   margin: $margen-doble 0 0;
-
 }
 
 #beneficios-productos {
@@ -675,49 +710,48 @@ input[type="submit"] {
 }
 
 // contenedor de boton solo para navegar al siguiente producto
-.sig-prod{
-text-align: center;
-padding-top: $margen-doble;
+.sig-prod {
+  text-align: center;
+  padding-top: $margen-doble;
 }
 
-
-.aprovecha-channel{
+.aprovecha-channel {
   padding: $margen-doble 20% 0;
   text-align: center;
-  h2{
-padding-bottom: $margen;
-    b{
+  h2 {
+    padding-bottom: $margen;
+    b {
       color: $papaya;
     }
   }
-  b{
-    color: $azul
-  };
-  @include cel{
+  b {
+    color: $azul;
+  }
+  @include cel {
     padding: $margen-doble 5% 0;
   }
 }
 
-
 // legales
-.legales{
+.legales {
   margin-top: -4rem;
-padding: 0 10%;
-  h2, h3{
+  padding: 0 10%;
+  h2,
+  h3 {
     color: $azul-grisaseo;
     margin-bottom: 1rem;
   }
-  p{
+  p {
     margin-bottom: 1rem;
   }
-  ul{
-    padding: 0 1rem 1rem ;
+  ul {
+    padding: 0 1rem 1rem;
   }
-  li{
+  li {
     list-style: disc;
-    padding: .2rem 0;
+    padding: 0.2rem 0;
   }
-  @include cel{
+  @include cel {
     padding: 0 5%;
   }
 }
