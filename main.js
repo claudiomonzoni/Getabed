@@ -61,12 +61,11 @@ const cerrarForm = document.getElementById("cerrarForm");
 btnform.addEventListener("click", function (e) {
   e.preventDefault();
   formulario.style.display = "block";
-})
+});
 cerrarForm.addEventListener("click", function (e) {
   e.preventDefault();
   formulario.style.display = "none";
-})
-
+});
 
 // Abrir el formulario en el banner de contacto
 // hacer scroll conla rueda del raton en el riel de cartas
@@ -100,41 +99,55 @@ if (
   window.location.pathname === "/index.html" ||
   window.location.pathname === "/index"
 ) {
-  //si estoy en el home llamo el carrusel de glide y las animaciones de gsap exclusivas del home
+  //solo js del home
+
+  // abrir y cerrar video
+  const abrirvideo = document.getElementById("vervideo");
+  const cerrarvideo = document.getElementById("cerrarvideo");
+  const video = document.getElementById("video");
+
+  abrirvideo.addEventListener("click", (e) => {
+    e.preventDefault()
+    video.style.display = "flex";
+  });
+  cerrarvideo.addEventListener("click", (e) => {
+    e.preventDefault()
+    video.style.display = "none";
+  });
   // tabs del home
-const historia = document.getElementById("historia");
-const atencion = document.getElementById("atencion");
-const enfoque = document.getElementById("enfoque");
+  const historia = document.getElementById("historia");
+  const atencion = document.getElementById("atencion");
+  const enfoque = document.getElementById("enfoque");
 
-historia.addEventListener("click", function (e) {
-  e.preventDefault();
-  abrirTab(e, "tabhistoria");
-});
-atencion.addEventListener("click", function (e) {
-  e.preventDefault();
-  abrirTab(e, "tabatencion");
-});
-enfoque.addEventListener("click", function (e) {
-  e.preventDefault();
-  abrirTab(e, "tabenfoque");
-});
+  historia.addEventListener("click", function (e) {
+    e.preventDefault();
+    abrirTab(e, "tabhistoria");
+  });
+  atencion.addEventListener("click", function (e) {
+    e.preventDefault();
+    abrirTab(e, "tabatencion");
+  });
+  enfoque.addEventListener("click", function (e) {
+    e.preventDefault();
+    abrirTab(e, "tabenfoque");
+  });
 
-function abrirTab(e, tab) {
-  // Obtengo todos los elementos de clase contetab
-  const contentab = document.getElementsByClassName("contetab");
-  for (let i = 0; i < contentab.length; i++) {
-    contentab[i].style.display = "none";
+  function abrirTab(e, tab) {
+    // Obtengo todos los elementos de clase contetab
+    const contentab = document.getElementsByClassName("contetab");
+    for (let i = 0; i < contentab.length; i++) {
+      contentab[i].style.display = "none";
+    }
+
+    // Obtengo todos los elementos de clase tab
+    const tablinks = document.getElementsByClassName("tab");
+    for (let i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
+    }
+
+    document.getElementById(tab).style.display = "block";
+    e.currentTarget.querySelector(".tab").className += " tabactivo";
   }
-
-  // Obtengo todos los elementos de clase tab
-  const tablinks = document.getElementsByClassName("tab");
-  for (let i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("tabactivo", "");
-  }
-
-  document.getElementById(tab).style.display = "block";
-  e.currentTarget.querySelector(".tab").className += " tabactivo";
-}
 
   slideHome();
 }

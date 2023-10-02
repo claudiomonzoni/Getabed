@@ -112,6 +112,35 @@ h3 {
 
 // home------------------------------------------------------------------------------------------------------------------------------------------
 
+#video{
+  display: none;
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  // display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(92, 98, 132, .7);
+  backdrop-filter: blur(5px);
+
+  video{
+    position: relative;
+    width: 70%;
+    height: auto;
+    @include cel{
+      width: 95%;
+    height: auto;
+    }
+  }
+}
+#cerrarvideo{
+  position: absolute;
+  top: 5%;
+  right: 3%;
+}
 // estilos de laptop
 #laptop-home {
   padding-top: 100px;
@@ -348,7 +377,7 @@ h3 {
   display: flex;
   align-items: center;
   height: 70vh;
-  background: url(/public/porque-elegir-getabed-home.png),
+  background: url(/public/porque-elegir-getabed-home.webp),
     url(/public/fondo-svg-porque-home-getabed.svg);
   background-repeat: no-repeat;
   background-position: center right, top left;
@@ -645,6 +674,11 @@ input[type="submit"] {
   }
 }
 
+// contenedor de boton solo para navegar al siguiente producto
+.sig-prod{
+text-align: center;
+padding-top: $margen-doble;
+}
 
 
 .aprovecha-channel{
