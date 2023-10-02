@@ -52,6 +52,7 @@ cerrar.addEventListener("click", function (e) {
   flecha.classList.toggle("rotar-flecha");
 });
 
+
 // Abrir el formulario en el banner de contacto
 
 const btnform = document.getElementById("formulario");
@@ -122,6 +123,8 @@ if (
     if (evt.key === 'Escape') {
       video.style.display = "none";
       videoHome.pause()
+      submenu.classList.remove("mostrar-submenu");
+      flecha.classList.toggle("rotar-flecha");
     }
 }); 
   // tabs del home

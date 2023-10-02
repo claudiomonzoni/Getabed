@@ -372,40 +372,6 @@ h3 {
   }
 }
 
-// #porque {
-//   margin-top: $margen;
-//   display: flex;
-//   align-items: center;
-//   height: 70vh;
-//   background: url(/public/porque-elegir-getabed-home.webp),
-//     url(/public/fondo-svg-porque-home-getabed.svg);
-//   background-repeat: no-repeat;
-//   background-position: center right, top left;
-//   background-size: contain, contain;
-//   h2 {
-//     color: $azul-grisaseo;
-//   }
-//   p {
-//     padding-bottom: 1rem;
-//   }
-//   span,
-//   b {
-//     color: $papaya;
-//   }
-//   .bandeja {
-//     padding-right: 30%;
-//   }
-//   @include cel {
-//     height: auto;
-//     background-position: bottom right, bottom left;
-//     background-size: 90%, 170%;
-//     height: auto;
-//     padding-bottom: 430px;
-//     .bandeja {
-//       padding-right: 0;
-//     }
-//   }
-// }
 
 #porque {
   margin-top: $margen;
