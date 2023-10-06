@@ -20,6 +20,10 @@ export function slideHome() {
           perPage: 1,
           padding: { left: "1rem", right: "4rem" },
         },
+        768: {
+          perPage: 1,
+          padding: { left: "1rem", right: "7rem" },
+        }
       },
       classes: {
         arrows: "splide__arrows your-class-arrows",

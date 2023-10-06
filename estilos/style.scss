@@ -145,6 +145,10 @@ h3 {
 #laptop-home {
   padding-top: 100px;
   position: relative;
+  @include tableta{
+    width: 70%;
+    margin: 0 auto;
+  }
 }
 #celular-lap {
   position: absolute;
@@ -155,6 +159,11 @@ h3 {
     left: 0%;
     width: 40%;
   }
+  @include tableta{
+    width: 50%;
+    top: 0;
+    left: -10%;
+  }
   @include hd {
     top: -7%;
     left: 15%;
@@ -163,6 +172,7 @@ h3 {
     top: -7%;
     left: 15%;
   }
+
 }
 #iconos-lap {
   position: absolute;
@@ -172,6 +182,9 @@ h3 {
     top: 10%;
     right: 0%;
     width: 65%;
+  }
+  @include tableta{
+    width: 40%;
   }
   @include hd {
     top: 25%;
@@ -195,6 +208,11 @@ h3 {
   @include cel {
     li {
       width: 25%;
+    }
+  }
+  @include tableta{
+    li {
+      width: 15%;
     }
   }
 }
@@ -260,6 +278,10 @@ h3 {
         column-count: 1;
       }
     }
+  }
+  @include tableta{
+    margin-top: $margen;
+    height: 40vh;
   }
 }
 
@@ -406,6 +428,11 @@ flex-wrap: wrap;
       padding-left: 2rem;
     }
   }
+  @include tableta{
+    height: 36vh;
+  
+
+  }
 }
 
 input,
@@ -445,6 +472,9 @@ input[type="submit"] {
   position: absolute;
   bottom: -$margen;
   @include cel {
+    display: none;
+  }
+  @include tableta {
     display: none;
   }
 }
