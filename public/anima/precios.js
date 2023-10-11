@@ -38,7 +38,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 gsap.from("#cartasprecios .bandeja div", {
     scrollTrigger: "#cartasprecios .bandeja div",
-    delay: 1,
+    delay: .5,
     stagger: {
         amount: 1,
     },
@@ -48,7 +48,6 @@ gsap.from("#cartasprecios .bandeja div", {
 
 gsap.from(".carta-simple", {
     scrollTrigger: ".carta-simple",
-
     stagger: {
         amount: 1,
     },
