@@ -141,8 +141,10 @@
     flex: 1;
     align-items: center;
     display: flex;
+    
   }
   .izq {
+    
     justify-content: center;
   }
   .der {
@@ -212,7 +214,8 @@
 }
 
 // solo las cartas del slider en el home
-.splide__slide {
+.glide__slides {
+  white-space: wrap!important;
   .bandeja-img img {
     &:nth-child(2) {
       transform: translate(-20%, -50%) !important;
@@ -1145,7 +1148,21 @@ footer {
 .btn-bordes {
   @include botones($oscuro: true, $sinicono: true, $bordes: true);
 }
-
+.btn-riel{
+  background: #fff;
+  color: #fff;
+  align-items: center;
+  padding: .5rem 1rem;
+  border-radius: $round;
+  display: inline-flex;
+  img{
+    height: 1.6rem;
+    margin: 0 .3rem;
+  }
+  @include cel{
+    display: none;
+  }
+}
 // cartas
 
 .getcarta {

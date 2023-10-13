@@ -1,4 +1,3 @@
-console.log("first");
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 let tl = gsap.timeline({ repeat: 0 });

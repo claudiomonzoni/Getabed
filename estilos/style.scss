@@ -4,6 +4,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;700;900&display=swap");
 
+// glide
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
 //reset
 html {
   box-sizing: border-box;
@@ -287,26 +290,16 @@ h3 {
     height: 40vh;
   }
 }
-
+.invertido{
+  transform: rotate(180deg);
+}
 // estilos del riel de cartas en el home
 #productosyservicios {
   // width: min(100% - 5rem, 95rem);
   margin-top: $margen-doble;
   #riel {
-    padding-left: calc((100% - (100% - 7rem)) / 2);
-    padding-right: calc((100% - (100% - 7rem)) / 2);
-    gap: $margen;
-    margin-top: $margen;
-    padding-bottom: $margen-doble;
-    overflow-x: scroll;
-    display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 60%;
-    .getcarta {
-      @include cel {
-        scroll-snap-align: start;
-      }
-    }
+   margin-top: $margen;
+   position: relative;
     @include cel {
       padding-left: calc((100% - (100% - 3rem)) / 2);
       grid-auto-columns: 80%;
@@ -318,43 +311,13 @@ h3 {
       padding-left: calc((100% - (100% - 14rem)) / 2);
     }
   }
+#controlesRiel{
+position: absolute;
+z-index: 999;
+bottom: -6rem;
+padding-left: $margen;
+}
 
-  /* Firefox */
-  * {
-    scrollbar-width: thin;
-    scrollbar-color: $azul $naranja;
-  }
-
-  /* Chrome, Edge y Safari */
-  *::-webkit-scrollbar {
-    height: 7px;
-    width: 50px;
-  }
-  *::-webkit-scrollbar-track {
-    border-radius: 5px;
-    background-color: transparent;
-  }
-
-  *::-webkit-scrollbar-track:hover {
-    background-color: $gris;
-  }
-
-  *::-webkit-scrollbar-track:active {
-    background-color: $gris;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background-color: $azul;
-  }
-
-  *::-webkit-scrollbar-thumb:hover {
-    background-color: $naranja;
-  }
-
-  *::-webkit-scrollbar-thumb:active {
-    background-color: $papaya;
-  }
 }
 
 #testimonios {

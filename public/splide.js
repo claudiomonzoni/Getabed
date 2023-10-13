@@ -1,37 +1,27 @@
-import Splide from "@splidejs/splide";
-// css del carrusel del home
-import "@splidejs/splide/css/core";
+import Glide, { Controls, Swipe, Breakpoints   } from "@glidejs/glide/dist/glide.modular.esm";
 
 export function slideHome() {
-  document.addEventListener("DOMContentLoaded", function () {
-    var splide = new Splide(".splide", {
-      type: "loop",
-      speed: 1000,
-      autoplay: true,
-      interval: 6000,
-      pagination: false,
-      wheel: true,
-      perPage: "2",
-      perMove: 1,
-      gap: "1rem",
-      padding: { left: "4rem", right: "0rem" },
-      breakpoints: {
-        640: {
-          perPage: 1,
-          padding: { left: "1rem", right: "4rem" },
+  new Glide(".glide", {
+    type: "carousel",
+    animationDuration: 800,
+    startAt: 0,
+    perView: 2,
+    //focusAt: 'center',
+    autoplay: 6200,
+    gap: 20,
+    peek: {
+      before: 20,
+      after: -170,
+    },
+    breakpoints: {
+      600: {
+        perView: 1,
+        peek: {
+          before: 20,
+          after: 70,
         },
-        768: {
-          perPage: 1,
-          padding: { left: "1rem", right: "7rem" },
-        }
-      },
-      classes: {
-        arrows: "splide__arrows your-class-arrows",
-        arrow: "splide__arrow your-class-arrow",
-        prev: "splide__arrow--prev btn-sinicono",
-        next: "splide__arrow--next btn-sinicono",
-      },
-    });
-    splide.mount();
-  });
+      }
+    }
+ 
+  }).mount({ Controls, Swipe, Breakpoints  });
 }
