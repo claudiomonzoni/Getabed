@@ -52,7 +52,7 @@ const getcartas = document.querySelectorAll(".getcarta div");
 getcartas.forEach((ele) => {
   gsap.from(ele, {
     scrollTrigger: ele,
-    delay: 1,
+    delay: 0.4,
     stagger: {
       amount: 1,
     },
@@ -66,7 +66,7 @@ const animo = document.querySelectorAll(".bandeja");
 animo.forEach((ele) => {
   gsap.from(ele, {
     scrollTrigger: ele,
-    delay: 1,
+    delay: 0.4,
     stagger: 0.3,
     y: 100,
     opacity: 0,

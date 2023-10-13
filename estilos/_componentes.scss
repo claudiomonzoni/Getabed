@@ -216,6 +216,7 @@
 // solo las cartas del slider en el home
 .glide__slides {
   white-space: wrap!important;
+white-space: inherit!important;
   .bandeja-img img {
     &:nth-child(2) {
       transform: translate(-20%, -50%) !important;
